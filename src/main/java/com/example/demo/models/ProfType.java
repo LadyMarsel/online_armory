@@ -1,6 +1,5 @@
-/*-----Gun Caliber-----
- * C'est le calibre des munitions, le diamètres des balles
- * C'est une énumération car c'est très rare qu'il y ait un nouveau calibre
+/*-----Prof Type-----
+ * Type de professionel du monde de l'armurerie
  */
 package com.example.demo.models;
 
@@ -8,28 +7,30 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
-public enum GunCaliber {
+@Getter
+public enum ProfType {
+    
+/*Type de professionel : */
 
-/*Calibres existants : */
-
-    LONGRIFLE_22("22 Long Rifle", 6, ""),
+    Armory("Arumurerie", ""),
+    ShootingClub("Club de tir", ""),
     ;
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String name;
-    private int size; 
     private String description;
 
-    GunCaliber(String name, int size, String description){
+    ProfType(String name, String description){
         this.name = name;
-        this.size = size;
         this.description = description;
     }
-    
+
+
 }

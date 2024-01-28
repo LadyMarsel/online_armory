@@ -1,4 +1,7 @@
-/*Fire Mode :  */
+/*-----Fire Mode-----
+ * C'est le mode d'action de la mise à feu des munitions, autrement dit le mécanisme
+ * C'est une énumération car il n'y a pas de nouvelles données à mettre une fois l'app lancée, la donnée est fixée d'avance
+ */
 package com.example.demo.models;
 
 import jakarta.persistence.Entity;
