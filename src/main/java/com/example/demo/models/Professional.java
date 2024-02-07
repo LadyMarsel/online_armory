@@ -3,12 +3,7 @@
  */
 package com.example.demo.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -24,11 +19,20 @@ public class Professional {
     private String description;
     private String adress;
     private String email;
-    private Long phone;
+    private int phone;
     private String webSite;
     
     @Enumerated(EnumType.STRING)
     private ProfType profType;
 
+    public Professional(String name, String description, String adress, String email, int phone, String webSite, ProfType profType){
+        this.name = name;
+        this.description = description;
+        this.adress = adress;
+        this.email = email;
+        this.phone = phone;
+        this.webSite = webSite;
+        this.profType = profType;
+    }
     
 }

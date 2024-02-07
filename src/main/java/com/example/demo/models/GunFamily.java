@@ -1,5 +1,5 @@
-/*-----Gun Type-----
- * C'est le type d'une arme, sa famille d'appartenance
+/*-----Gun Family-----
+ * C'est la famille d'appartenance d'une arme
  * C'est une énumération car il n'y a pas de nouvelles données à mettre une fois l'app lancée, la donnée est fixée d'avance
  */
 package com.example.demo.models;

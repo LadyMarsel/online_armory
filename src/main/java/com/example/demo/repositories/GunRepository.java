@@ -1,5 +1,10 @@
 package com.example.demo.repositories;
 
-public class GunRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.demo.models.Gun;
+
+public interface GunRepository extends CrudRepository<Gun, Long> {
+
     
 }

@@ -1,6 +1,7 @@
 
 /*-----License-----
- * C'est un document liant une personne à une arme spécifique, comme des papiers d'identification.
+ * C'est un permis, liant un membre à une arme ou à une catégorie d'arme.
+ * Une license s'obtient après des tests, examen et délivrances de documents administratifs/médicaux
  * Une license est liée à la fois à un modèle et à des catégories d'arme
  * 
  * Par exemlpe : 
@@ -13,7 +14,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -35,8 +35,16 @@ public class License {
     private Date dateOfValidity;
     
     @Enumerated(EnumType.STRING)
-    private LicenseType licenseType; //Le modèle sur lequel on base la séléction d'arme dispo
+    private LicensePaper licensePaper; //Le papier sur lequel on base la séléction d'arme dispo
     
-    @ManyToMany
+    @OneToMany
     private List<GunType> gunType;//Les catégories législatives mentionées éventuelement sur la license, filtre supplémentaire
+
+    public License(Member member, String name, Date dateOfValidity, LicensePaper licensePaper, List<GunType> gunType){
+        this.member = member;
+        this.name = name;
+        this.dateOfValidity = dateOfValidity;
+        this.licensePaper = licensePaper;
+        this.gunType = gunType;
+    }
 }

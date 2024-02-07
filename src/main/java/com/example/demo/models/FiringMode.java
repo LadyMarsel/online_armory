@@ -1,5 +1,5 @@
-/*-----Fire Mode-----
- * C'est le mode d'action de la mise à feu des munitions, autrement dit le mécanisme
+/*-----Firing Mode-----
+ * C'est le mode d'action de la mise à feu des munitions
  * C'est une énumération car il n'y a pas de nouvelles données à mettre une fois l'app lancée, la donnée est fixée d'avance
  */
 package com.example.demo.models;
@@ -14,12 +14,16 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @Getter
-public enum FireMode {
+public enum FiringMode {
 
 /* Modes d'action : */
 
     AUTOMATIC("Automatic", ""),
     SEMIAUTOMATIC("Semi Automatique", ""),
+    SIMPLEACTION("Simple action", ""),
+    DUALACTION("Double action", ""),
+    MIXTE("Action mixte", ""),
+    SELECTIONNALBE("Mode séléctionnable", ""),
     ;
 
     @Id
@@ -28,7 +32,7 @@ public enum FireMode {
     private String name;
     private String description;
 
-    FireMode(String name, String description){
+    FiringMode(String name, String description){
         this.name = name;
         this.description = description;
     }

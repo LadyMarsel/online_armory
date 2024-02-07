@@ -1,5 +1,5 @@
-/*-----Gun Label-----
- * C'est la marque des armes
+/*-----Company-----
+ * C'est la marque des armes et des munitions
  */
 package com.example.demo.models;
 
@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
-public class GunLabel {
+public class Company {
+
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -22,4 +23,11 @@ public class GunLabel {
     private String description;
     private String logo;
     
+    public Company(String name, String year, String country, String description, String logo){
+        this.name = name;
+        this.year = year;
+        this.country = country;
+        this.description = description;
+        this.logo = logo;
+    }
 }
