@@ -14,10 +14,10 @@ public enum GunType {
         
 /* Type d'arme  */
 
-    REVOLVER("Revolver", "", GunFamily.HAND_GUN, BelgianCategories.A),
-    PISTOLET("Pistolet", "", GunFamily.HAND_GUN, BelgianCategories.B),
-    CARABINE("Carabine", "Canon rayé", GunFamily.LONG_BAREL, BelgianCategories.C),
-    FUSIL("Fusil", "Canon lisse", GunFamily.LONG_BAREL, BelgianCategories.D),//Probème : Tous peuvent être de catégorie E aussi...
+    REVOLVER("Revolver", "", GunFamily.HAND_GUN, BelgianCategory.A),
+    PISTOLET("Pistolet", "", GunFamily.HAND_GUN, BelgianCategory.B),
+    CARABINE("Fusil", "Canon lisse", GunFamily.LONG_BAREL, BelgianCategory.C),
+    FUSIL("Carabine", "Canon rayé", GunFamily.LONG_BAREL, BelgianCategory.D),//Probème : Tous peuvent être de catégorie E aussi...
     ;
 
     @Id
@@ -30,13 +30,13 @@ public enum GunType {
     private GunFamily gunFamily;//Arme de poing ou canon long
 
     @Enumerated(EnumType.STRING)
-    private BelgianCategories belgianCategories;//Catégorie belge (A, B, C ou D)
+    private BelgianCategory belgianCategory;//Catégorie belge (A, B, C ou D)
 
-    GunType(String name, String description, GunFamily gunFamily, BelgianCategories belgianCategories){
+    GunType(String name, String description, GunFamily gunFamily, BelgianCategory belgianCategory){
         this.name = name;
         this.description = description;
         this.gunFamily = gunFamily;
-        this.belgianCategories = belgianCategories;
+        this.belgianCategory = belgianCategory;
     }
     
 }

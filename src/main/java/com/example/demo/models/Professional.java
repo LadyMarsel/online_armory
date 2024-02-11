@@ -23,16 +23,16 @@ public class Professional {
     private String webSite;
     
     @Enumerated(EnumType.STRING)
-    private ProfType profType;
+    private ProfessionalType professionalType;
 
-    public Professional(String name, String description, String adress, String email, int phone, String webSite, ProfType profType){
+    public Professional(String name, String description, String adress, String email, int phone, String webSite, ProfessionalType professionalType){
         this.name = name;
         this.description = description;
         this.adress = adress;
         this.email = email;
         this.phone = phone;
         this.webSite = webSite;
-        this.profType = profType;
+        this.professionalType = professionalType;
     }
     
 }

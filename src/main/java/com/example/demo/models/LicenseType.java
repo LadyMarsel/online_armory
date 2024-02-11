@@ -16,16 +16,16 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @Getter
-public enum LicensePaper {
+public enum LicenseType {
 
 /*Type de la license :  */
 
-    M4("Model 4", "Tir récréatif", "Examen théorique à la commune, examen pratique par l'URSTB-F puis examen pratique à la police", new ArrayList()),
-    M9_SPORT("Modèle 9 Sportif", "Tir sportif", "License de tireur sportif (LTS)", new ArrayList()),
-    M9_HUNT("Modèle 9 de Chasse", "Chasse", "License de tireur sportif (LTS)", new ArrayList()),
-    M6A("Modèle 6A", "Détention temporaire", "", new ArrayList()),
-    M_GUNSMITH("Modèle d'armurier", "Détention pour armurerie", "Diplome en armurerie", new ArrayList()),
-    M_COLLECTION("Modèle pour Collection", "Détention pour panoplie", "", new ArrayList()),
+    M4("Model 4", "Tir récréatif", new ArrayList()),
+    M9_SPORT("Modèle 9 Sportif", "Tir sportif", new ArrayList()),
+    M9_HUNT("Modèle 9 de Chasse", "Chasse", new ArrayList()),
+    M6A("Modèle 6A", "Détention temporaire", new ArrayList()),
+    M_GUNSMITH("Modèle d'armurier", "Détention pour armurerie", new ArrayList()),
+    M_COLLECTION("Modèle pour Collection", "Détention pour panoplie", new ArrayList()),
     ;
 
     @Id
@@ -33,15 +33,13 @@ public enum LicensePaper {
     private Long id;
     private String name;
     private String description;
-    private String origin;
 
     @OneToMany
     private List<GunCaliber> gunCaliber;
 
-    LicensePaper(String name, String description, String origin, List<GunCaliber> gunCaliber){
+    LicenseType(String name, String description, List<GunCaliber> gunCaliber){
         this.name = name;
         this.description = description;
-        this.origin = origin;
         this.gunCaliber = gunCaliber;
     }
     

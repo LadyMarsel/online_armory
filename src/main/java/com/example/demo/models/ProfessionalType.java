@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @Getter
-public enum ProfType {
+public enum ProfessionalType {
     
 /*Type de professionel : */
 
@@ -27,7 +27,7 @@ public enum ProfType {
     private String name;
     private String description;
 
-    ProfType(String name, String description){
+    ProfessionalType(String name, String description){
         this.name = name;
         this.description = description;
     }

@@ -19,8 +19,8 @@ public class Ammunition {
     @ManyToOne
     private Company company;//Marque
 
-    @OneToOne
-    private GunCaliber gunCaliber;
+    @Enumerated(EnumType.STRING)
+    private GunCaliber gunCaliber;//Calibre 
      
     private String description;
 

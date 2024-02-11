@@ -1,4 +1,4 @@
-/*-----Gun Model-----
+/*-----Gun-----
  * C'est le modèle d'une arme
  * Pour un modèle d'arme on a une marque, un type, un mode d'action, un ou plusieurs calibres
  */
@@ -26,7 +26,7 @@ public class Gun {
     @Enumerated(EnumType.STRING)
     private FiringMode firingMode;//Mode de mise à feu
 
-    @OneToOne
+    @Enumerated(EnumType.STRING)
     private GunCaliber gunCaliber;//Calibre
 
     //@OneToMany
@@ -38,8 +38,10 @@ public class Gun {
     private String img;
     private boolean isForbidden;//Est-ce une arme prohibée en Belgique ?
     private boolean isFree;//Est-ce une arme en vente libre en Belgique ?
+    private int barelSize;//Taille du canon
+    private int totalSize;//Taille totale
 
-    public Gun(Company company, GunType gunType, FiringMode firingMode, GunCaliber gunCaliber, String name, String year, String description, String img, boolean isForbidden, boolean isFree){
+    public Gun(Company company, GunType gunType, FiringMode firingMode, GunCaliber gunCaliber, String name, String year, String description, String img, boolean isForbidden, boolean isFree, int barelSize, int totalSize){
         this.company = company;
         this.gunType = gunType;
         this.firingMode = firingMode;
@@ -50,6 +52,8 @@ public class Gun {
         this.img = img;
         this.isForbidden = isForbidden;
         this.isFree = isFree;
+        this.barelSize = barelSize;
+        this.totalSize = totalSize;
     }
     
 }

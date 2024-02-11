@@ -35,16 +35,16 @@ public class License {
     private Date dateOfValidity;
     
     @Enumerated(EnumType.STRING)
-    private LicensePaper licensePaper; //Le papier sur lequel on base la séléction d'arme dispo
+    private LicenseType licenseType; //Le papier sur lequel on base la séléction d'arme dispo
     
     @OneToMany
     private List<GunType> gunType;//Les catégories législatives mentionées éventuelement sur la license, filtre supplémentaire
 
-    public License(Member member, String name, Date dateOfValidity, LicensePaper licensePaper, List<GunType> gunType){
+    public License(Member member, String name, Date dateOfValidity, LicenseType licenseType, List<GunType> gunType){
         this.member = member;
         this.name = name;
         this.dateOfValidity = dateOfValidity;
-        this.licensePaper = licensePaper;
+        this.licenseType = licenseType;
         this.gunType = gunType;
     }
 }

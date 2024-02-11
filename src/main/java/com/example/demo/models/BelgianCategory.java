@@ -12,14 +12,14 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
-public enum BelgianCategories {
+public enum BelgianCategory {
 
     /* Catégorie Belge d'arme à feu :  */
 
     A("Catégorie A"),//Revolver
     B("Catégorie B"),//Pistolet
-    C("Catégorie C"),//Carabine
-    D("Catégorie D"),//Fusil
+    C("Catégorie C"),//Fusil
+    D("Catégorie D"),//Carabine
     E("Catégorie E"),//Poudre noire
     ;
 
@@ -28,7 +28,7 @@ public enum BelgianCategories {
     private Long id;
     private String name;
 
-    BelgianCategories(String name){
+    BelgianCategory(String name){
         this.name = name;
     }
     
