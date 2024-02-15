@@ -8,3 +8,5 @@ docker start my-pgadmin
 
 docker run --name armorydb -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
 docker start armorydb
+
+juste un test sur mon portable avec un clone
