@@ -4,13 +4,13 @@
  */
 package com.example.demo.models;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
-@Entity
-@NoArgsConstructor
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+
 @Getter
+@RequiredArgsConstructor
 public enum GunFamily {
 
 /*Type d'arme :  */
@@ -19,14 +19,6 @@ public enum GunFamily {
     HAND_GUN("Arme de poing"),
     ;
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id; 
-    private String name;
-
-    GunFamily(String name) {
-        this.name = name;
-    }
-
+    private final String name;
     
 }

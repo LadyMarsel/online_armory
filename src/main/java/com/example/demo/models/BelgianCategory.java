@@ -5,31 +5,16 @@
  */
 package com.example.demo.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.NoArgsConstructor;
 
-@Entity
-@NoArgsConstructor
 public enum BelgianCategory {
 
     /* Catégorie Belge d'arme à feu :  */
 
-    A("Catégorie A"),//Revolver
-    B("Catégorie B"),//Pistolet
-    C("Catégorie C"),//Fusil
-    D("Catégorie D"),//Carabine
-    E("Catégorie E"),//Poudre noire
+    A,//Revolver
+    B,//Pistolet
+    C,//Fusil
+    D,//Carabine
+    E,//Poudre noire
     ;
-
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String name;
-
-    BelgianCategory(String name){
-        this.name = name;
-    }
     
 }

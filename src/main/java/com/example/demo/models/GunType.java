@@ -5,11 +5,13 @@
 */
 package com.example.demo.models;
 
+
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 
 @Entity
-@NoArgsConstructor
+@RequiredArgsConstructor
 public enum GunType {
         
 /* Type d'arme  */
@@ -20,24 +22,14 @@ public enum GunType {
     FUSIL("Carabine", "Canon rayé", GunFamily.LONG_BAREL, BelgianCategory.D),//Probème : Tous peuvent être de catégorie E aussi...
     ;
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
-    private String name;
-    private String description;
+    private final String name;
+    private final String description;
 
     @Enumerated(EnumType.STRING)
-    private GunFamily gunFamily;//Arme de poing ou canon long
+    private final GunFamily gunFamily;//Arme de poing ou canon long
 
     @Enumerated(EnumType.STRING)
-    private BelgianCategory belgianCategory;//Catégorie belge (A, B, C ou D)
-
-    GunType(String name, String description, GunFamily gunFamily, BelgianCategory belgianCategory){
-        this.name = name;
-        this.description = description;
-        this.gunFamily = gunFamily;
-        this.belgianCategory = belgianCategory;
-    }
+    private final BelgianCategory belgianCategory;//Catégorie belge (A, B, C ou D)
     
 }
     

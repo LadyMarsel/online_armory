@@ -4,8 +4,10 @@
  */
 package com.example.demo.models;
 
+
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
+
 
 @Entity
 @NoArgsConstructor

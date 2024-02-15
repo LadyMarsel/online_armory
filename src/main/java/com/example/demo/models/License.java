@@ -10,12 +10,13 @@
  */
 package com.example.demo.models;
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
 import java.util.Date;
 import java.util.List;
+
 
 @Entity
 @NoArgsConstructor
@@ -37,7 +38,7 @@ public class License {
     @Enumerated(EnumType.STRING)
     private LicenseType licenseType; //Le papier sur lequel on base la séléction d'arme dispo
     
-    @OneToMany
+    @Enumerated(EnumType.STRING)
     private List<GunType> gunType;//Les catégories législatives mentionées éventuelement sur la license, filtre supplémentaire
 
     public License(Member member, String name, Date dateOfValidity, LicenseType licenseType, List<GunType> gunType){

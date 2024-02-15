@@ -7,7 +7,7 @@ package com.example.demo.models;
 
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
-import java.util.List;
+
 
 @Entity
 @NoArgsConstructor
@@ -28,9 +28,6 @@ public class Gun {
 
     @Enumerated(EnumType.STRING)
     private GunCaliber gunCaliber;//Calibre
-
-    //@OneToMany
-    //private LicensePaper licensePaper;//License néccéssaire à l'obtention de l'arme. Certaines armes s'obtiennent avec différentes licenses
     
     private String name;
     private String year;
