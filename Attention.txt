@@ -1,0 +1,2 @@
+Le package "ip" dans npm/node_modules est vulnérable au attaques SSFR dans sa version actuelle. Il faudra regarder pour un fix.
+Si pas de fixe, corriger dans la structure l'utilisation du IP package ou revenir à une version safe du package
