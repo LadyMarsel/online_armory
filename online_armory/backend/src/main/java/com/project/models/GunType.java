@@ -7,14 +7,16 @@ package com.project.models;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 
-@Entity
+@Getter
 @RequiredArgsConstructor
 public enum GunType {
         
 /* Type d'arme  */
+
 
     REVOLVER("Revolver", "", GunFamily.HAND_GUN, BelgianCategory.A),
     PISTOLET("Pistolet", "", GunFamily.HAND_GUN, BelgianCategory.B),

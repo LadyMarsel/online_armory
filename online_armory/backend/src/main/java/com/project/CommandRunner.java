@@ -3,6 +3,7 @@ package com.project;
 import com.project.repositories.*;
 import com.project.controllers.*;
 import com.project.models.*;
+import com.project.services.*;
 
 import java.util.List;
 
@@ -36,13 +37,13 @@ public class CommandRunner implements CommandLineRunner {
     public void run(String... args) throws Exception{
         System.out.println("Coucou");
         
-        Company glock = new Company("Glock", "1963", "Autriche", "", "");
+        Company glock = new Company("Glock", "1963", "Autriche", "ceci est une scription", "url d'un img");
         companyRepo.save(glock);
         
-        Gun glock_17 = new Gun(glock, GunType.PISTOLET, FiringMode.SEMIAUTOMATIC, GunCaliber.C9, "Glock 17", "1980", "description", "URL d'img", false, false, 23, 40);
+        Gun glock_17 = new Gun(glock, GunType.PISTOLET, FiringMode.SEMIAUTOMATIC, GunCaliber.C9, "Glock 17", "1980", "description", "URL d'img", false, false, (int) 23, (int) 40);
         gunRepo.save(glock_17);
         
-        Gun glock_18 = new Gun(glock, GunType.PISTOLET, FiringMode.SEMIAUTOMATIC, GunCaliber.C9, "Glock 18", "1987", "description", "URL img", false, false, 25, 45);
+        Gun glock_18 = new Gun(glock, GunType.PISTOLET, FiringMode.SEMIAUTOMATIC, GunCaliber.C9, "Glock 18", "1987", "description", "URL img", false, false, (int) 25, (int) 45);
         gunRepo.save(glock_18);
         
         Ammunition C9x19Para = new Ammunition("9x19 Parabellum", glock, GunCaliber.C9, "");

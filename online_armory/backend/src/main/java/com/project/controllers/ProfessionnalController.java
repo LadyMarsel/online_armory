@@ -13,7 +13,7 @@ public class ProfessionnalController {
     @Autowired
     private ProfessionnalService professionnalService;
 
-    @GetMapping("/professionnal")
+    @GetMapping("/professionnals")
     public Iterable<Professionnal> getProfessionnals(){
         return professionnalService.getProfessionnals();
     }
