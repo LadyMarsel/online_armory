@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public enum ProfessionalType {
+public enum ProfessionnalType {
     
 /*Type de professionel : */
 

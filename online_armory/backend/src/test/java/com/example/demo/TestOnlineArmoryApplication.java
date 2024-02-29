@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
+import com.project.OnlineArmoryApplication;
+
 @TestConfiguration(proxyBeanMethods = false)
 public class TestOnlineArmoryApplication {
 

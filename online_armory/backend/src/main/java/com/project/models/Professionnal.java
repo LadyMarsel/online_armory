@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @Getter
-public class Professional {
+public class Professionnal {
     
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -25,16 +25,16 @@ public class Professional {
     private String webSite;
     
     @Enumerated(EnumType.STRING)
-    private ProfessionalType professionalType;
+    private ProfessionnalType professionnalType;
 
-    public Professional(String name, String description, String adress, String email, int phone, String webSite, ProfessionalType professionalType){
+    public Professionnal(String name, String description, String adress, String email, int phone, String webSite, ProfessionnalType professionnalType){
         this.name = name;
         this.description = description;
         this.adress = adress;
         this.email = email;
         this.phone = phone;
         this.webSite = webSite;
-        this.professionalType = professionalType;
+        this.professionnalType = professionnalType;
     }
     
 }

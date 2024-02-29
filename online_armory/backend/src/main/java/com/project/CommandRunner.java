@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class CommandRunner implements CommandLineRunner {
     
     @Autowired
-    private AmunitionRepository amunitionRepo;
+    private AmmunitionRepository amunitionRepo;
 
     @Autowired 
     private CompanyRepository companyRepo;
@@ -30,7 +30,7 @@ public class CommandRunner implements CommandLineRunner {
     private MemberRepository memberRepo;
 
     @Autowired 
-    private ProfessionalRepository professionalRepo;
+    private ProfessionnalRepository professionnalRepo;
     
     @Override
     public void run(String... args) throws Exception{
@@ -57,8 +57,8 @@ public class CommandRunner implements CommandLineRunner {
         License emLic = new License(emilie, "Emilie", null, LicenseType.M9_SPORT, List.of(GunType.PISTOLET));
         licenseRepo.save(emLic);
         
-        Professional dekaise = new Professional("Armurerie Dekaise", "", "Zoning nord de Wavre", "dekaise@hotmail.be", 042, "www.dekaise.be", ProfessionalType.Armory);
-        professionalRepo.save(dekaise);
+        Professionnal dekaise = new Professionnal("Armurerie Dekaise", "", "Zoning nord de Wavre", "dekaise@hotmail.be", 042, "www.dekaise.be", ProfessionnalType.Armory);
+        professionnalRepo.save(dekaise);
     }
     
 }
