@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": [
+        "src\\main\\java",
+        "src\\main\\resources",
+        "src\\test\\java",
+        "src\\test\\resources",
+        "online_armory\\backend\\src\\main\\java\\com",
+        "online_armory\\backend\\src\\main\\java\\com\\project\\models",
+        "online_armory\\backend\\src\\main\\java\\com\\project\\controllers",
+        "online_armory\\backend\\src\\main\\java\\com\\project\\repositories"
+    ]
+}
