@@ -35,7 +35,6 @@ public class CommandRunner implements CommandLineRunner {
     
     @Override
     public void run(String... args) throws Exception{
-        System.out.println("Coucou");
         
         Company glock = new Company("Glock", "1963", "Autriche", "ceci est une scription", "url d'un img");
         companyRepo.save(glock);
