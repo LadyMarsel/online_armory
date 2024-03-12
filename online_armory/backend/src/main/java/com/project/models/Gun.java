@@ -34,6 +34,7 @@ public class Gun {
     private GunCaliber gunCaliber;//Calibre
     
     private String name;
+    private String country;
     private String year;
     private String description;
     private String img;
@@ -42,12 +43,13 @@ public class Gun {
     private int barelSize;//Taille du canon
     private int totalSize;//Taille totale
 
-    public Gun(Company company, GunType gunType, FiringMode firingMode, GunCaliber gunCaliber, String name, String year, String description, String img, boolean isForbidden, boolean isFree, int barelSize, int totalSize){
+    public Gun(Company company, GunType gunType, FiringMode firingMode, GunCaliber gunCaliber, String name, String country, String year, String description, String img, boolean isForbidden, boolean isFree, int barelSize, int totalSize){
         this.company = company;
         this.gunType = gunType;
         this.firingMode = firingMode;
         this.gunCaliber = gunCaliber;
         this.name = name;
+        this.country = country;
         this.year = year;
         this.description = description;
         this.img = img;

@@ -1,0 +1,43 @@
+<div *ngIf="gun" class="row" class="center-align">
+    <div class="col">
+        <h2 class="header">{{ gun.name }}</h2>
+        <div class="card horizontal hoverable">
+            <div class="card-image">
+                <img [src]="gun.img">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <table class="border striped">
+                        <tbody>
+                            <tr>
+                                <td>Nom</td>
+                                <td><strong>{{ gun.name }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Pays</td>
+                                <td><strong>{{ gun.country }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Companie</td>
+                                <td><strong>{{ gun.company }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Année</td>
+                                <td><strong>{{ gun.year }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td><strong>{{ gun.description }}</strong></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-action">
+                    <a (click)="goToGunList()">Retour</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h4 *ngIf='!gun' class="center"> Aucun gun trouvé</h4>
