@@ -20,6 +20,8 @@ public class Professionnal {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String name;
+    private String country;
+    private String year;
     private String description;
     private String adress;
     private String email;
@@ -29,8 +31,10 @@ public class Professionnal {
     @Enumerated(EnumType.STRING)
     private ProfessionnalType professionnalType;
 
-    public Professionnal(String name, String description, String adress, String email, int phone, String webSite, ProfessionnalType professionnalType){
+    public Professionnal(String name, String country, String year,String description, String adress, String email, int phone, String webSite, ProfessionnalType professionnalType){
         this.name = name;
+        this.country = country;
+        this.year = year;
         this.description = description;
         this.adress = adress;
         this.email = email;

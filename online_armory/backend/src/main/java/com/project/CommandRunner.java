@@ -1,9 +1,7 @@
 package com.project;
 
 import com.project.repositories.*;
-import com.project.controllers.*;
 import com.project.models.*;
-import com.project.services.*;
 
 import java.util.List;
 
@@ -45,7 +43,7 @@ public class CommandRunner implements CommandLineRunner {
         Gun glock_18 = new Gun(glock, GunType.PISTOLET, FiringMode.SEMIAUTOMATIC, GunCaliber.C9, "Glock 18", "Allemagne", "1987", "description", "URL img", false, false, (int) 25, (int) 45);
         gunRepo.save(glock_18);
         
-        Ammunition C9x19Para = new Ammunition("9x19 Parabellum", glock, GunCaliber.C9, "");
+        Ammunition C9x19Para = new Ammunition("9x19 Parabellum", glock, GunCaliber.C9, "description", "cecie est une img");
         amunitionRepo.save(C9x19Para);
         
         Member emilie = new Member("Emilie", "Flore", "emilie@hotmail.com", (long) 1234);
@@ -57,7 +55,7 @@ public class CommandRunner implements CommandLineRunner {
         License emLic = new License(emilie, "Emilie", null, LicenseType.M9_SPORT, List.of(GunType.PISTOLET));
         licenseRepo.save(emLic);
         
-        Professionnal dekaise = new Professionnal("Armurerie Dekaise", "", "Zoning nord de Wavre", "dekaise@hotmail.be", 042, "www.dekaise.be", ProfessionnalType.Armory);
+        Professionnal dekaise = new Professionnal("Armurerie Dekaise", "belgique", "Zoning nord de Wavre", "dekaise@hotmail.be", "adresse", "email", 042, "www.dekaise.be", ProfessionnalType.Armory);
         professionnalRepo.save(dekaise);
     }
     

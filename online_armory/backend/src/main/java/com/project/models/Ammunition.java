@@ -29,12 +29,14 @@ public class Ammunition {
     private GunCaliber gunCaliber;//Calibre 
      
     private String description;
+    private String img;
 
-    public Ammunition(String name, Company company, GunCaliber gunCaliber, String description){
+    public Ammunition(String name, Company company, GunCaliber gunCaliber, String description, String img){
         this.name = name;
         this.company = company;
         this.gunCaliber = gunCaliber;
         this.description = description;
+        this.img = img;
     }
     
 } 
