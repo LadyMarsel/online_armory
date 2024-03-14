@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 import { Gun } from '../gun';
-import { GUNS } from '../mock-guns';
+import { CrudService } from '../../services/crud.service';
+
 
 @Component({
   selector: 'app-detail-gun',
@@ -11,21 +13,21 @@ import { GUNS } from '../mock-guns';
   templateUrl: './detail-gun.component.html',
   styleUrl: './detail-gun.component.css'
 })
-export class DetailGunComponent implements OnInit {
 
-  gunList: Gun[] = GUNS;
+export class DetailGunComponent implements OnInit {
+  gunList: Gun[];
   gun: Gun|undefined;
 
-  constructor(private route: ActivatedRoute, private router: Router){}
+  constructor(
+    private route: ActivatedRoute, 
+    private router: Router,
+    private crudService: CrudService
+    ){}
 
   ngOnInit() {
-    this.gunList = GUNS;
     const gunId: string|null = this.route.snapshot.paramMap.get('id'); //Permet d'acceder à l'url à un instant T
-    
     if(gunId){
-      this.gun = this.gunList.find(gun => gun.id == +gunId);
-    }else{
-      this.gun = undefined;
+      this.gun = this.crudService.getGunById(+gunId);
     }
   }
 

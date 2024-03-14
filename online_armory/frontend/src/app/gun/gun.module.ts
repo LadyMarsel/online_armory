@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { BorderCardDirective } from '../directive/border-card.directive';
 
-
+import { CrudService } from '../services/crud.service';
 
 @NgModule({
-  declarations: [],
   imports: [
-    BrowserModule,
-    CommonModule,
-    BorderCardDirective
-  ]
+  ],
+  declarations: [
+  ],
+  providers: [CrudService]
 })
+
 export class GunModule { }

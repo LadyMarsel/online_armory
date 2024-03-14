@@ -1,27 +1,30 @@
-import { Component } from '@angular/core';
-import { Gun } from '../gun';
-import { GUNS } from '../mock-guns';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BorderCardDirective } from '../../directive/border-card.directive';
-import { ResizeImageDirective } from '../../directive/resize-image.directive';
+import { CommonModule } from '@angular/common';
+
+import { Gun } from '../gun';
+import { CrudService } from '../../services/crud.service';
+
 
 @Component({
   selector: 'app-list-gun',
   standalone: true,
-  imports: [
-    CommonModule,
-    BorderCardDirective,
-    ResizeImageDirective
-  ],
+  imports: [CommonModule],
   templateUrl: './list-gun.component.html',
   styleUrl: './list-gun.component.css'
 })
-export class ListGunComponent {
 
-  gunList: Gun[] = GUNS;
+export class ListGunComponent implements OnInit {
+  gunList: Gun[];
 
-  constructor(private router: Router){}
+  constructor(
+    private router: Router,
+    private crudService: CrudService
+    ){}
+
+  ngOnInit(){
+    this.gunList = this.crudService.getGunList();
+  }
 
   goToGun(gun: Gun){
     this.router.navigate(['/gun', gun.id]);

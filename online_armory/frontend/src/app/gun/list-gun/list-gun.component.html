@@ -3,15 +3,11 @@
 <div class="container">
     <div class="row">
         <div *ngFor="let gun of gunList" class="col m4 s6">
-            <div (click)="goToGun(gun)" class="card horizontal" appBorderCard>
-                <div class="card-image">
-                    <img class="responsive-img" [src]="gun.img"/>
+            <div class="item-container" (click)="goToGun(gun)">
+                <div class="round-frame">
+                    <img class="item-image" [src]="gun.img" />
                 </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <p>{{ gun.name }}</p>
-                    </div>
-                </div>
+                <p class="item-name">{{ gun.name }}</p>
             </div>
         </div>
     </div>

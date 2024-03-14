@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListGunComponent } from './gun/list-gun/list-gun.component';
 import { DetailGunComponent } from './gun/detail-gun/detail-gun.component';
-
+import { ListGunComponent } from './gun/list-gun/list-gun.component';
 
 export const routes: Routes = [
     { path: 'gun/:id', component: DetailGunComponent },
