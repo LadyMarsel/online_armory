@@ -1,9 +1,12 @@
 <nav>
-    <div class="nav-wrapper teal">
-        <a routerLink="/guns" class="brand-logo center">
-            Armurerie en ligne
-        </a>
-    </div>
+<div class="nav-wrapper">
+    <a href="#" class="brand-logo">Online Armory</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <li><a routerLink="/companies">Fabricants</a></li>
+    <li><a routerLink="/guns">Armes</a></li>
+    <li><a routerLink="/ammunitions">Munitions</a></li>
+    </ul>
+</div>
 </nav>
 
 <router-outlet></router-outlet>

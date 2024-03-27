@@ -15,7 +15,7 @@ import { CrudService } from '../../services/crud.service';
 })
 
 export class DetailGunComponent implements OnInit {
-  gunList: Gun[];
+  gunsList: Gun[];
   gun: Gun|undefined;
 
   constructor(
@@ -27,12 +27,21 @@ export class DetailGunComponent implements OnInit {
   ngOnInit() {
     const gunId: string|null = this.route.snapshot.paramMap.get('id'); //Permet d'acceder à l'url à un instant T
     if(gunId){
-      this.gun = this.crudService.getGunById(+gunId);
+      this.crudService.getGunById(+gunId).subscribe(data => this.gun = data);
     }
   }
 
-  goToGunList(){
+  goToGunsList(){
     this.router.navigate(['/guns']);
+  }
+
+  
+  goToEditGun(gun: Gun) {
+    this.router.navigate(['/edit/gun', gun.id]);
+  }
+
+  deleteGun(gun: Gun) {
+    this.crudService.deleteGunById(gun.id).subscribe(() => this.goToGunsList());
   }
 
 }

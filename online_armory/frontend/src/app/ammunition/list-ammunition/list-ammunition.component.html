@@ -1,0 +1,14 @@
+<h1 class="center"> Liste de munitions</h1>>
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let ammunition of ammunitionsList" class="col m4 s6">
+            <div class="item-container" (click)="goToAmmunition(ammunition)">
+                <div class="round-frame">
+                    <img class="item-image" [src]="ammunition.img" />
+                </div>
+                <p class="item-name">{{ ammunition.name }}</p>
+            </div>
+        </div>
+    </div>
+</div>

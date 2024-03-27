@@ -26,15 +26,15 @@ public class Ammunition {
     private Company company;//Marque
 
     @Enumerated(EnumType.STRING)
-    private GunCaliber gunCaliber;//Calibre 
+    private Caliber caliber;//Calibre 
      
     private String description;
     private String img;
 
-    public Ammunition(String name, Company company, GunCaliber gunCaliber, String description, String img){
+    public Ammunition(String name, Company company, Caliber caliber, String description, String img){
         this.name = name;
         this.company = company;
-        this.gunCaliber = gunCaliber;
+        this.caliber = caliber;
         this.description = description;
         this.img = img;
     }

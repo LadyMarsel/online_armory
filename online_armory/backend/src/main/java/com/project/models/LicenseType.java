@@ -31,6 +31,6 @@ public enum LicenseType {
     private final String description;
 
     @OneToMany
-    private final List<GunCaliber> gunCaliber;
+    private final List<Caliber> caliber;
     
 }

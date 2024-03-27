@@ -15,7 +15,7 @@ import { CrudService } from '../../services/crud.service';
 })
 
 export class ListGunComponent implements OnInit {
-  gunList: Gun[];
+  gunsList: Gun[];
 
   constructor(
     private router: Router,
@@ -23,7 +23,7 @@ export class ListGunComponent implements OnInit {
     ){}
 
   ngOnInit(){
-    this.gunList = this.crudService.getGunList();
+  this.crudService.getGunsList().subscribe(data => this.gunsList = data);
   }
 
   goToGun(gun: Gun){

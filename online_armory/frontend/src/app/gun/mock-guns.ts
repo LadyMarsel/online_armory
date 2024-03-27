@@ -3,7 +3,7 @@ import { Gun } from "./gun";
 export const GUNS: Gun[] = [
     {
         id: 1,
-        company: "glock",
+        company: "glock 17",
         gunType: "revolver",
         firingMode: "semi-AUTO",
         gunCaliber: 9,
@@ -19,7 +19,7 @@ export const GUNS: Gun[] = [
     },
     {
         id: 2,
-        company: "Colt",
+        company: "colt 1911",
         gunType: "pistolet",
         firingMode: "semi-AUTO",
         gunCaliber: 9,

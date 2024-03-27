@@ -19,7 +19,7 @@
                             </tr>
                             <tr>
                                 <td>Companie</td>
-                                <td><strong>{{ gun.company }}</strong></td>
+                                <td><strong>{{ gun.company.name }}</strong></td>
                             </tr>
                             <tr>
                                 <td>Année</td>
@@ -34,7 +34,9 @@
                     </table>
                 </div>
                 <div class="card-action">
-                    <a (click)="goToGunList()">Retour</a>
+                    <a (click)="goToGunsList()">Retour</a>
+                    <a (click)="goToEditGun(gun)">Éditer</a>
+                    <a (click)="deleteGun(gun)">Supprimer</a>
                 </div>
             </div>
         </div>

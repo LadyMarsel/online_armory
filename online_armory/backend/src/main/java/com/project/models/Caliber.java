@@ -10,9 +10,9 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public enum GunCaliber {
+public enum Caliber {
 
-    C9("", ""),
+    C9("", "9"),
     ;
 
     private final String inch;

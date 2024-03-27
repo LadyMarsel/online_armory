@@ -26,12 +26,12 @@ public class Gun {
 
     @Enumerated(EnumType.STRING)
     private GunType gunType;//Type (Revolver, Pistolet, Carabine ou Fusil)
-    
+
     @Enumerated(EnumType.STRING)
     private FiringMode firingMode;//Mode de mise à feu
 
     @Enumerated(EnumType.STRING)
-    private GunCaliber gunCaliber;//Calibre
+    private Caliber caliber;//Calibre
     
     private String name;
     private String country;
@@ -43,11 +43,11 @@ public class Gun {
     private int barelSize;//Taille du canon
     private int totalSize;//Taille totale
 
-    public Gun(Company company, GunType gunType, FiringMode firingMode, GunCaliber gunCaliber, String name, String country, String year, String description, String img, boolean isForbidden, boolean isFree, int barelSize, int totalSize){
+    public Gun(Company company, GunType gunType, FiringMode firingMode, Caliber caliber, String name, String country, String year, String description, String img, boolean isForbidden, boolean isFree, int barelSize, int totalSize){
         this.company = company;
         this.gunType = gunType;
         this.firingMode = firingMode;
-        this.gunCaliber = gunCaliber;
+        this.caliber = caliber;
         this.name = name;
         this.country = country;
         this.year = year;

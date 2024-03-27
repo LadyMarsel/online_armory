@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.project.models.Ammunition;
 import com.project.models.Company;
-import com.project.models.GunCaliber;
+import com.project.models.Caliber;
 import com.project.services.AmmunitionService;
 
 
@@ -62,9 +62,9 @@ public class AmmunitionController {
                 currentAmmunition.setCompany(company);
             }
 
-            GunCaliber gunCaliber = ammunition.getGunCaliber();
-            if(gunCaliber != null){
-                currentAmmunition.setGunCaliber(gunCaliber);
+            Caliber caliber = ammunition.getCaliber();
+            if(caliber != null){
+                currentAmmunition.setCaliber(caliber);
             }
 
             String description = ammunition.getDescription();

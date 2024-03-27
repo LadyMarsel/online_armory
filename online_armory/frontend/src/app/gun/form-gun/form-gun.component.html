@@ -1,0 +1,128 @@
+<form *ngIf="gun" (ngSubmit)="onSubmit()" #gunForm="ngForm">
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <div class="card-panel">
+
+                <div class="form-group">
+                    <label for="name"> Nom:</label>
+                    <input type="text" class="form-control" id="name"
+                        required
+                        pattern="^[a-zA-Z0-9àéèç]{1-25]$}"
+                        [(ngModel)]="gun.name" name="name"
+                        #name="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="company"> Companie:</label><!--Il faudrait faire la liaison avec l'objet Company, et en faire une liste de séléction-->
+                    <input type="text" class="form-control" id="company"
+                        required
+                        [(ngModel)]="gun.company" name="company"
+                        #company="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="gunType"> Type d'arme:</label><!--C'est un objet enum dans le backend, à lier en liste de sélection-->
+                    <input type="text" class="form-control" id="gunType"
+                        required
+                        [(ngModel)]="gun.gunType" name="gunType"
+                        #gunType="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="firingMode"> Mode de mise à feu:</label><!--C'est un objet enum dans le backend, à lier en liste de sélection-->
+                    <input type="text" class="form-control" id="firingMode"
+                        required
+                        [(ngModel)]="gun.firingMode" name="firingMode"
+                        #firingMode="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="caliber"> Calibre:</label><!--C'est un objet enum dans le backend, à lier en liste de sélection-->
+                    <input type="text" class="form-control" id="caliber"
+                        required
+                        [(ngModel)]="gun.caliber" name="caliber"
+                        #caliber="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="country"> Pays:</label>
+                    <input type="text" class="form-control" id="country"
+                        required
+                        pattern="^[a-zA-Z0-9àéèç]{1-25]$}"
+                        [(ngModel)]="gun.country" name="country"
+                        #country="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="year"> Année de création:</label>
+                    <input type="number" class="form-control" id="year"
+                        required
+                        pattern="^[0-9]{1-4]$}"
+                        [(ngModel)]="gun.year" name="year"
+                        #year="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="description"> Description:</label>
+                    <input type="text" class="form-control" id="description"
+                        required
+                        pattern="^[a-zA-Z0-9àéèç]{1-250]$}"
+                        [(ngModel)]="gun.description" name="description"
+                        #description="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="img"> img:</label><!-- Il me faut une image, pas de titre, avec des required de taille ou de mg-->
+                    <input type="url" class="form-control" id="img"
+                        required
+                        [(ngModel)]="gun.img" name="img"
+                        #img="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="isForbidden"> Est prohibée ?</label><!-- Il me faut des checkbox avec un choix d'office coché-->
+                    <input type="boolean" class="form-control" id="isForbidden"
+                        required
+                        [(ngModel)]="gun.isForbidden" name="isForbidden"
+                        #isForbidden="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="isFree"> En vente libre ?</label><!-- Il me faut des checkbox avec un choix d'office coché-->
+                    <input type="boolean" class="form-control" id="isFree"
+                        required
+                        [(ngModel)]="gun.isFree" name="isFree"
+                        #isFree="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="barelSize"> Taille du canon:</label>
+                    <input type="number" class="form-control" id="barelSize"
+                        required
+                        pattern="^[0-9]{1-4]$}"
+                        [(ngModel)]="gun.barelSize" name="barelSize"
+                        #barelSize="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="totalSize"> Taille totale:</label>
+                    <input type="number" class="form-control" id="totalSize"
+                        required
+                        pattern="^[0-9]{1-4]$}"
+                        [(ngModel)]="gun.totalSize" name="totalSize"
+                        #totalSize="ngModel">
+                </div>
+
+                <div class="divider"></div>
+                <div class="section center">
+                    <button type="submit"
+                        class="waves-effect waves-light btn"
+                        [disabled]="!gunForm.form.valid">
+                        Valider
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<h3 *ngIf="!gun" class="center">Aucun gun à éditer </h3>*/

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.project.models.Company;
 import com.project.models.FiringMode;
 import com.project.models.Gun;
-import com.project.models.GunCaliber;
+import com.project.models.Caliber;
 import com.project.models.GunType;
 import com.project.services.GunService;
 
@@ -68,9 +68,9 @@ public class GunController {
                 currentGun.setFiringMode(firingMode);
             }
 
-            GunCaliber gunCaliber = gun.getGunCaliber();
-            if(gunCaliber != null){
-                currentGun.setGunCaliber(gunCaliber);
+            Caliber caliber = gun.getCaliber();
+            if(caliber != null){
+                currentGun.setCaliber(caliber);
             }
 
             String name = gun.getName();
