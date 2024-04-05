@@ -8,5 +8,4 @@ import com.project.models.Gun;
 @Repository
 public interface GunRepository extends CrudRepository<Gun, Long> {
 
-    
 }

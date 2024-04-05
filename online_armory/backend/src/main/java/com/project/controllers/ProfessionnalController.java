@@ -90,6 +90,7 @@ public class ProfessionnalController {
                 currentProfessionnal.setWebSite(webSite);
             }
 
+            // ! ProfessionnalType doit être existant !
             ProfessionnalType professionnalType = professionnal.getProfessionnalType();
             if(professionnalType != null){
                 currentProfessionnal.setProfessionnalType(professionnalType);

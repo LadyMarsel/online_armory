@@ -8,5 +8,4 @@ import com.project.models.Professionnal;
 @Repository
 public interface ProfessionnalRepository extends CrudRepository<Professionnal, Long>{
 
-    
 }

@@ -30,4 +30,8 @@ export class ListGunComponent implements OnInit {
     this.router.navigate(['/gun', gun.id]);
   }
 
+  goToAddGun() {
+    this.router.navigate(['/gun/add']);
+  }
+
 }

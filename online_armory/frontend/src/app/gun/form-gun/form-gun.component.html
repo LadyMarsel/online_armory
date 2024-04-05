@@ -7,9 +7,13 @@
                     <label for="name"> Nom:</label>
                     <input type="text" class="form-control" id="name"
                         required
-                        pattern="^[a-zA-Z0-9àéèç]{1-25]$}"
                         [(ngModel)]="gun.name" name="name"
                         #name="ngModel">
+                    
+                    <div [hidden]="name.valid || name.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du gun est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -18,6 +22,11 @@
                         required
                         [(ngModel)]="gun.company" name="company"
                         #company="ngModel">
+
+                    <div [hidden]="company.valid || company.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du company est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -26,6 +35,11 @@
                         required
                         [(ngModel)]="gun.gunType" name="gunType"
                         #gunType="ngModel">
+
+                    <div [hidden]="gunType.valid || gunType.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du gunType est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -34,6 +48,11 @@
                         required
                         [(ngModel)]="gun.firingMode" name="firingMode"
                         #firingMode="ngModel">
+
+                    <div [hidden]="firingMode.valid || firingMode.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du firingMode est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -42,33 +61,50 @@
                         required
                         [(ngModel)]="gun.caliber" name="caliber"
                         #caliber="ngModel">
+
+                    <div [hidden]="caliber.valid || caliber.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du caliber est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="country"> Pays:</label>
+                    <label for="country"> Pays:</label> <!-- faire une liste des pays en interne ?-->
                     <input type="text" class="form-control" id="country"
                         required
-                        pattern="^[a-zA-Z0-9àéèç]{1-25]$}"
                         [(ngModel)]="gun.country" name="country"
                         #country="ngModel">
+
+                    <div [hidden]="country.valid || country.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du country est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="year"> Année de création:</label>
+                    <label for="year"> Année de création:</label><!-- Faire un calendrier de séléction ?-->
                     <input type="number" class="form-control" id="year"
                         required
-                        pattern="^[0-9]{1-4]$}"
                         [(ngModel)]="gun.year" name="year"
                         #year="ngModel">
+
+                    <div [hidden]="year.valid || year.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du year est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="description"> Description:</label>
                     <input type="text" class="form-control" id="description"
                         required
-                        pattern="^[a-zA-Z0-9àéèç]{1-250]$}"
                         [(ngModel)]="gun.description" name="description"
                         #description="ngModel">
+                    
+                    <div [hidden]="description.valid || description.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du description est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -77,6 +113,11 @@
                         required
                         [(ngModel)]="gun.img" name="img"
                         #img="ngModel">
+
+                    <div [hidden]="img.valid || img.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du img est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -85,6 +126,11 @@
                         required
                         [(ngModel)]="gun.isForbidden" name="isForbidden"
                         #isForbidden="ngModel">
+
+                    <div [hidden]="isForbidden.valid || isForbidden.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du isForbidden est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -93,24 +139,37 @@
                         required
                         [(ngModel)]="gun.isFree" name="isFree"
                         #isFree="ngModel">
+
+                    <div [hidden]="isFree.valid || isFree.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du isFree est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="barelSize"> Taille du canon:</label>
                     <input type="number" class="form-control" id="barelSize"
                         required
-                        pattern="^[0-9]{1-4]$}"
                         [(ngModel)]="gun.barelSize" name="barelSize"
                         #barelSize="ngModel">
+
+                    <div [hidden]="barelSize.valid || barelSize.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du barelSize est requis.
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label for="totalSize"> Taille totale:</label>
                     <input type="number" class="form-control" id="totalSize"
                         required
-                        pattern="^[0-9]{1-4]$}"
                         [(ngModel)]="gun.totalSize" name="totalSize"
                         #totalSize="ngModel">
+
+                    <div [hidden]="totalSize.valid || totalSize.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du totalSize est requis.
+                    </div>
                 </div>
 
                 <div class="divider"></div>

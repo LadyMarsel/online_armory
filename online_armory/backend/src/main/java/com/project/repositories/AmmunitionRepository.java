@@ -7,6 +7,5 @@ import com.project.models.Ammunition;
 
 @Repository
 public interface AmmunitionRepository extends CrudRepository<Ammunition, Long> {
-
     
 }

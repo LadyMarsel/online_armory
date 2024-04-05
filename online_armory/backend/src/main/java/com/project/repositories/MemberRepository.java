@@ -8,5 +8,4 @@ import com.project.models.Member;
 @Repository
 public interface MemberRepository extends CrudRepository<Member, Long> {
 
-    
 }

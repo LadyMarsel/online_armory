@@ -9,5 +9,5 @@
         "online_armory\\backend\\src\\main\\java\\com\\project\\controllers",
         "online_armory\\backend\\src\\main\\java\\com\\project\\repositories"
     ],
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "automatic"
 }

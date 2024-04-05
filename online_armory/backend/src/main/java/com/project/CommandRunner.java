@@ -10,7 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 
-@Component
+/*@Component
 public class CommandRunner implements CommandLineRunner {
     
     @Autowired
@@ -37,10 +37,10 @@ public class CommandRunner implements CommandLineRunner {
         Company glock = new Company("Glock", "1963", "Autriche", "ceci est une scription", "url d'un img");
         companyRepo.save(glock);
         
-        Gun glock_17 = new Gun(glock, GunType.PISTOLET, FiringMode.SEMIAUTOMATIC, Caliber.C9, "Glock 17", "Allemagne", "1980", "description", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.sportsmansoutdoorsuperstore.com%2Fprodimages%2Falt_images%2Fg17-gen5-fs_2.jpg&f=1&nofb=1&ipt=cd538ae34b49d4b299d0624df71bbcf569878b78fe918eeb03e2c4f6a03cd786&ipo=images", false, false, (int) 23, (int) 40);
+        Gun glock_17 = new Gun(glock, GunType.PISTOLET, RearmingMode.SEMIAUTOMATIC, Caliber.C9, "Glock 17", "Allemagne", "1980", "description", "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.sportsmansoutdoorsuperstore.com%2Fprodimages%2Falt_images%2Fg17-gen5-fs_2.jpg&f=1&nofb=1&ipt=cd538ae34b49d4b299d0624df71bbcf569878b78fe918eeb03e2c4f6a03cd786&ipo=images", false, false, (int) 23, (int) 40);
         gunRepo.save(glock_17);
         
-        Gun glock_18 = new Gun(glock, GunType.PISTOLET, FiringMode.SEMIAUTOMATIC, Caliber.C9, "Glock 18", "Allemagne", "1987", "description", "URL img", false, false, (int) 25, (int) 45);
+        Gun glock_18 = new Gun(glock, GunType.PISTOLET, RearmingMode.SEMIAUTOMATIC, Caliber.C9, "Glock 18", "Allemagne", "1987", "description", "URL img", false, false, (int) 25, (int) 45);
         gunRepo.save(glock_18);
         
         Ammunition C9x19Para = new Ammunition("9x19 Parabellum", glock, Caliber.C9, "description", "cecie est une img");
@@ -59,4 +59,4 @@ public class CommandRunner implements CommandLineRunner {
         professionnalRepo.save(dekaise);
     }
     
-}
+}*/

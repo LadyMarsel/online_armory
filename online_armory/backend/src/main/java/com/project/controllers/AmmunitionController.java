@@ -57,11 +57,13 @@ public class AmmunitionController {
                 currentAmmunition.setName(name);
             }
 
+            // ! Compagnie doit être existant !
             Company company = ammunition.getCompany();
             if(company != null){
                 currentAmmunition.setCompany(company);
             }
 
+            // ! Calibre doit être existant !
             Caliber caliber = ammunition.getCaliber();
             if(caliber != null){
                 currentAmmunition.setCaliber(caliber);

@@ -1,24 +1,31 @@
 /*-----Prof Type-----
  * Type de professionel du monde de l'armurerie
+ * Exemple 
+ * Armory("Arumurerie", ""),
+ * ShootingClub("Club de tir", ""),
  */
 package com.project.models;
 
-
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-
+@Entity
 @Getter
-@RequiredArgsConstructor
-public enum ProfessionnalType {
-    
-/*Type de professionel : */
+@Setter
+@NoArgsConstructor
+public class ProfessionnalType {
 
-    Armory("Arumurerie", ""),
-    ShootingClub("Club de tir", ""),
-    ;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
+    private String name;
+    private String description;
 
-    private final String name;
-    private final String description;
+    public ProfessionnalType(String name, String description){
+        this.name = name;
+        this.description = description;
+    }
 
 }

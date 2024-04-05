@@ -34,7 +34,7 @@ export class CrudService {
   }
 
   getGunById(gunId: number):Observable<Gun|undefined>{
-    return this.http.get<Gun>(this.baseUrl+'/gun/${gunId}').pipe(
+    return this.http.get<Gun>(this.baseUrl+`/gun/${gunId}`).pipe(
       tap((response) => this.log(response)),
       catchError((error) => this.handleError(error, undefined))
     );
@@ -92,5 +92,7 @@ export class CrudService {
   /*---------- LICENSE ----------*/
 
   /*---------- PROFESSIONAL ----------*/
+
+  
   
 }

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.project.models.Company;
-import com.project.models.FiringMode;
+import com.project.models.RearmingMode;
 import com.project.models.Gun;
 import com.project.models.Caliber;
 import com.project.models.GunType;
@@ -53,21 +53,25 @@ public class GunController {
         if(g.isPresent()){
             Gun currentGun = g.get();
 
+            // ! Compagnie doit être existant !
             Company company = gun.getCompany();
             if(company != null){
                 currentGun.setCompany(company);
             }
 
+            // ! GunType doit être existant !
             GunType gunType = gun.getGunType();
             if(gunType != null){
                 currentGun.setGunType(gunType);
             }
 
-            FiringMode firingMode = gun.getFiringMode();
-            if(firingMode != null){
-                currentGun.setFiringMode(firingMode);
+            // ! RearmingMode doit être existant !
+            RearmingMode rearmingMode = gun.getRearmingMode();
+            if(rearmingMode != null){
+                currentGun.setRearmingMode(rearmingMode);
             }
 
+            // ! Caliber doit être existant !
             Caliber caliber = gun.getCaliber();
             if(caliber != null){
                 currentGun.setCaliber(caliber);

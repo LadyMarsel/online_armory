@@ -1,21 +1,31 @@
 /*-----Gun Caliber-----
  * Calibre des armes, en système métrique et en système de pouce
+ * Exemple
+ * 9 milliètre
+ * 22 long rifle
  */
 package com.project.models;
 
-
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-
+@Entity
 @Getter
-@RequiredArgsConstructor
-public enum Caliber {
+@Setter
+@NoArgsConstructor
+public class Caliber {
 
-    C9("", "9"),
-    ;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
+    private String inch;
+    private String metric;
 
-    private final String inch;
-    private final String metric;
+    public Caliber (String inch, String metric){
+        this.inch = inch;
+        this.metric = metric;
+    }
     
 }

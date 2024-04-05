@@ -3,17 +3,15 @@
  */
 package com.project.models;
 
-
 import jakarta.persistence.*;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 
-
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 public class Member {
 
     @Id

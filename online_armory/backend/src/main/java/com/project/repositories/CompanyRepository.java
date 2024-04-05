@@ -8,5 +8,4 @@ import com.project.models.Company;
 @Repository
 public interface CompanyRepository extends CrudRepository<Company, Long> {
 
-    
 }

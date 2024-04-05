@@ -4,35 +4,36 @@
  */
 package com.project.models;
 
-
 import jakarta.persistence.*;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 
-
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 public class Gun {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     
+    //Un gun ne peut avoir qu'un seul fabricant, mais un fabriquant peut avoir plusieurs modèles
     @ManyToOne
-    private Company company;//Marque
+    private Company company;//Fabricant
 
-    @Enumerated(EnumType.STRING)
-    private GunType gunType;//Type (Revolver, Pistolet, Carabine ou Fusil)
+    //Un gun ne peut avoir qu'un seul type, mais un type peut être décliné en plusieurs modèles
+    @ManyToOne
+    private GunType gunType;//Revolver, Pistolet, Carabine ou Fusil
 
-    @Enumerated(EnumType.STRING)
-    private FiringMode firingMode;//Mode de mise à feu
+    //Un gun ne peut avoir qu'un seul mode de réarmement, mais un mode de réarmement peut être décliné en plusieurs modèles
+    @ManyToOne
+    private RearmingMode rearmingMode;//Mode de réarmement de l'arme
 
-    @Enumerated(EnumType.STRING)
+    //Un gun ne peut avoir qu'un seul calibre, mais un calibre peut être utilisé par plusieurs modèles
+    @ManyToOne
     private Caliber caliber;//Calibre
-    
     private String name;
     private String country;
     private String year;
@@ -43,10 +44,10 @@ public class Gun {
     private int barelSize;//Taille du canon
     private int totalSize;//Taille totale
 
-    public Gun(Company company, GunType gunType, FiringMode firingMode, Caliber caliber, String name, String country, String year, String description, String img, boolean isForbidden, boolean isFree, int barelSize, int totalSize){
+    public Gun(Company company, GunType gunType, RearmingMode rearmingMode, Caliber caliber, String name, String country, String year, String description, String img, boolean isForbidden, boolean isFree, int barelSize, int totalSize){
         this.company = company;
         this.gunType = gunType;
-        this.firingMode = firingMode;
+        this.rearmingMode = rearmingMode;
         this.caliber = caliber;
         this.name = name;
         this.country = country;

@@ -3,22 +3,16 @@
  */
 package com.project.models;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Getter;
+import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 
-
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 public class Company {
-
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

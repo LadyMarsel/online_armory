@@ -3,19 +3,17 @@
  */
 package com.project.models;
 
-
 import jakarta.persistence.*;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 
-
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 public class Professionnal {
-    
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
@@ -27,8 +25,6 @@ public class Professionnal {
     private String email;
     private int phone;
     private String webSite;
-    
-    @Enumerated(EnumType.STRING)
     private ProfessionnalType professionnalType;
 
     public Professionnal(String name, String country, String year,String description, String adress, String email, int phone, String webSite, ProfessionnalType professionnalType){

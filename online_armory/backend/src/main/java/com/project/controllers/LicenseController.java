@@ -53,14 +53,10 @@ public class LicenseController {
         if(l.isPresent()){
             License currentLicense = l.get();
 
+            // ! Member doit être existant !
             Member member = license.getMember();
             if(member != null){
                 currentLicense.setMember(member);
-            }
-
-            String name = license.getName();
-            if(name != null){
-                currentLicense.setName(name);
             }
 
             Date dateOfValidity = license.getDateOfValidity();
@@ -68,15 +64,11 @@ public class LicenseController {
                 currentLicense.setDateOfValidity(dateOfValidity);
             }
 
+            // ! LicenseType doit être existant !
             LicenseType licenseType = license.getLicenseType();
             if(licenseType != null){
                 currentLicense.setLicenseType(licenseType);
             }
-
-            /*GunType gunType = license.getGunType();
-            if(gunType != null){
-                currentLicense.setGunType(gunType);
-            }*/
 
             licenseService.saveLicense(currentLicense);
             return currentLicense;

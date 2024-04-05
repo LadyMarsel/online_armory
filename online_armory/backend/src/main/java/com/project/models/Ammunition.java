@@ -1,20 +1,18 @@
 /*-----Ammunition-----
  * C'est les munitions
- * Cela comprend le nom officiel de la munition aisini que sa marque, mais aussi sa taille, dans le système métrique, dans le système des pouces
+ * Cela comprend le nom officiel de la munition aisini que son fabricant, mais aussi sa taille, dans le système métrique, dans le système des pouces
  */
 package com.project.models;
 
-
 import jakarta.persistence.*;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 
-
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 public class Ammunition {
 
     @Id
@@ -22,12 +20,10 @@ public class Ammunition {
     private Long id;
     private String name;
     
+    //Une munition ne peut avoir qu'un seul fabricant, mais un fabricant peut faire plusieurs munitions différentes
     @ManyToOne
     private Company company;//Marque
-
-    @Enumerated(EnumType.STRING)
-    private Caliber caliber;//Calibre 
-     
+    private Caliber caliber;//Calibre
     private String description;
     private String img;
 
