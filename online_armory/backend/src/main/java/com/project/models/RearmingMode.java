@@ -11,6 +11,8 @@
  */
 package com.project.models;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
@@ -27,6 +29,9 @@ public class RearmingMode {
     private Long id;
     private String name;
     private String description;
+
+    @OneToMany
+    private List<Gun> guns;
     
     public RearmingMode (String name, String description){
         this.name = name;

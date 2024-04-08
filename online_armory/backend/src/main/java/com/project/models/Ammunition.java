@@ -23,6 +23,7 @@ public class Ammunition {
     //Une munition ne peut avoir qu'un seul fabricant, mais un fabricant peut faire plusieurs munitions différentes
     @ManyToOne
     private Company company;//Marque
+    @ManyToOne
     private Caliber caliber;//Calibre
     private String description;
     private String img;

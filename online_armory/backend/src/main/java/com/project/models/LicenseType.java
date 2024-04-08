@@ -32,11 +32,13 @@ public class LicenseType {
 
     //Classe associative néccéssaire. Un type de license peut contenir plusieurs Calibres, et un calibre peut avoir plusieurs licenses
     @ManyToMany
-    private List<Caliber> caliber;
+    private List<Caliber> calibers;
+
+    @OneToOne
+    private License license;
     
-    public LicenseType(String name, String description, List<Caliber> caliber){
+    public LicenseType(String name, String description){
         this.name = name;
         this.description = description;
-        this.caliber = caliber;
     }
 }

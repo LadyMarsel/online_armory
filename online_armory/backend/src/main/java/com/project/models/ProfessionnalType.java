@@ -23,6 +23,9 @@ public class ProfessionnalType {
     private String name;
     private String description;
 
+    @OneToOne
+    private Professionnal professionnal;
+
     public ProfessionnalType(String name, String description){
         this.name = name;
         this.description = description;

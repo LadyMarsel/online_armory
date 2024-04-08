@@ -25,6 +25,8 @@ public class Professionnal {
     private String email;
     private int phone;
     private String webSite;
+
+    @OneToOne
     private ProfessionnalType professionnalType;
 
     public Professionnal(String name, String country, String year,String description, String adress, String email, int phone, String webSite, ProfessionnalType professionnalType){

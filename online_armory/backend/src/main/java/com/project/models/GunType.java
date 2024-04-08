@@ -11,6 +11,8 @@
 */
 package com.project.models;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
@@ -29,6 +31,12 @@ public class GunType {
     private String barelType;//Canon lisse ou canon rayé
     private String gunFamily;//Arme de poing ou canon long
     private String belgianCategory;//Catégorie belge (A, B, C ou D)
+
+    @OneToMany
+    private List<Gun> guns;
+
+    @ManyToMany
+    private List<License> licenses;
 
     public GunType(String name, String barelType, String gunFamily, String belgianCategory){
         this.name = name;

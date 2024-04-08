@@ -33,4 +33,44 @@ public class CaliberController {
             return null;
         }
     }
+
+    /* Create - Create one */
+
+    @PostMapping("/caliber")
+    public Caliber createCaliber(@RequestBody Caliber caliber){
+        return caliberService.saveCaliber(caliber);
+    }
+
+    /* Update - Update an existing one */
+
+    @PutMapping("/caliber/{id}")
+    public Caliber updateCaliber(@PathVariable("id") final Long id, @RequestBody Caliber caliber){
+        Optional<Caliber> a = caliberService.getCaliber(id);
+        if(a.isPresent()){
+            Caliber currentCaliber = a.get();
+
+            String inch = caliber.getInch();
+            if(inch != null){
+                currentCaliber.setInch(inch);
+            }
+
+            String metric = caliber.getMetric();
+            if(metric != null){
+                currentCaliber.setMetric(metric);
+            }
+
+            caliberService.saveCaliber(currentCaliber);
+            return currentCaliber;
+
+        } else {
+            return null;
+        }
+    }
+
+    /* Delete - Delete one */
+
+    @DeleteMapping("/caliber/{id}")
+    public void deleteCaliber(@PathVariable("id") final Long id){
+        caliberService.deleteCaliber(id);
+    }
 }

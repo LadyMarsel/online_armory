@@ -6,6 +6,8 @@
  */
 package com.project.models;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
@@ -18,10 +20,20 @@ import lombok.Setter;
 public class Caliber {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+
     private String inch;
     private String metric;
+    
+    @ManyToMany
+    private List<LicenseType> licenseTypes;
+
+    @OneToMany
+    private List<Gun> guns;
+
+    @OneToMany
+    private List<Ammunition> ammunitions;
 
     public Caliber (String inch, String metric){
         this.inch = inch;

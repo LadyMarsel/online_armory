@@ -38,16 +38,16 @@ public class License {
     @Temporal(TemporalType.DATE)
     private Date dateOfValidity;
     
+    @OneToOne
     private LicenseType licenseType; //Le papier sur lequel on base la séléction d'arme dispo et qui reprend les calibres
     
     //Classe associative néccéssaire : Une license peut contenir plusieurs type d'arme, et un type d'arme peut être repris par plusieurs licenses
     @ManyToMany
-    private List<GunType> gunType;//Les catégories législatives mentionées éventuelement sur la license, filtre supplémentaire
+    private List<GunType> gunTypes;//Les catégories législatives mentionées éventuelement sur la license, filtre supplémentaire
 
-    public License(Member member, Date dateOfValidity, LicenseType licenseType, List<GunType> gunType){
+    public License(Member member, Date dateOfValidity, LicenseType licenseType){
         this.member = member;
         this.dateOfValidity = dateOfValidity;
         this.licenseType = licenseType;
-        this.gunType = gunType;
     }
 }

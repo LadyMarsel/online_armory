@@ -3,6 +3,8 @@
  */
 package com.project.models;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
@@ -22,6 +24,12 @@ public class Company {
     private String country; 
     private String description;
     private String logo;
+
+    @OneToMany
+    private List<Gun> guns;
+
+    @OneToMany
+    private List<Ammunition> ammunitions;
     
     public Company(String name, String year, String country, String description, String logo){
         this.name = name;

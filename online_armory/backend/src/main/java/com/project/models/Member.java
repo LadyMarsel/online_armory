@@ -3,6 +3,8 @@
  */
 package com.project.models;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
@@ -21,6 +23,9 @@ public class Member {
     private String lastName;
     private String email;
     private Long pswd;
+
+    @OneToMany
+    private List<License> licenses;
 
     public Member(String firstName, String lastName, String email, Long pswd){
         this.firstName = firstName;
