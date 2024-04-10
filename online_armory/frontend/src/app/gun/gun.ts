@@ -1,11 +1,14 @@
+import { Caliber } from "../caliber/caliber";
 import { Company } from "../company/company";
+import { GunType } from "../gyn-type/gun-type";
+import { RearmingMode } from "../rearming-mode/rearming-mode";
 
 export class Gun {
     id: number;
     company: Company;
-    gunType: string;
-    firingMode: string;
-    caliber: number;
+    gunType: GunType;
+    caliber: Caliber;
+    rearmingMode: RearmingMode;
     name: string;
     country: string;
     year: number;
@@ -18,9 +21,9 @@ export class Gun {
 
     constructor(
         company: Company = null,
-        gunType: string = "",
-        firingMode: string = "",
-        caliber: number = 0,
+        gunType: GunType = null,
+        caliber: Caliber = null,
+        rearmingMode: RearmingMode = null,
         name: string = "",
         country: string = "",
         year: number = 0,
@@ -33,8 +36,8 @@ export class Gun {
     ){
         this.company = company;
         this.gunType = gunType;
-        this.firingMode = firingMode;
         this.caliber = caliber;
+        this.rearmingMode = rearmingMode;
         this.name = name;
         this.country = country;
         this.year = year;
