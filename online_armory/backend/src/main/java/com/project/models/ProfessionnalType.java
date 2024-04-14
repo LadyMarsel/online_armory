@@ -6,6 +6,8 @@
  */
 package com.project.models;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
@@ -23,8 +25,8 @@ public class ProfessionnalType {
     private String name;
     private String description;
 
-    @OneToOne
-    private Professionnal professionnal;
+    @OneToMany
+    private List<Professionnal> professionnals;
 
     public ProfessionnalType(String name, String description){
         this.name = name;

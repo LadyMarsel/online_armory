@@ -3,11 +3,12 @@ import { Company } from '../company';
 import { Router } from '@angular/router';
 import { CrudService } from '../../services/crud.service';
 import { CommonModule } from '@angular/common';
+import {FormCompanyComponent} from '../form-company/form-company.component';
 
 @Component({
   selector: 'app-list-company',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FormCompanyComponent],
   templateUrl: './list-company.component.html',
   styleUrl: './list-company.component.css'
 })

@@ -34,8 +34,8 @@ public class LicenseType {
     @ManyToMany
     private List<Caliber> calibers;
 
-    @OneToOne
-    private License license;
+    @OneToMany
+    private List<License> licenses;
     
     public LicenseType(String name, String description){
         this.name = name;

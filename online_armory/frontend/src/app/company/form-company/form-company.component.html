@@ -1,1 +1,8 @@
-<p>form-company works!</p>
+<input type="text" name="name" [(ngModel)]="company.name">
+<input type="text" name="year" [(ngModel)]="company.year">
+<input type="text" name="country" [(ngModel)]="company.country">
+<input type="text" name="description" [(ngModel)]="company.description">
+<input type="text" name="logo" [(ngModel)]="company.logo">
+
+<button (click)="addCompany()">Add Company</button>
+

@@ -6,6 +6,8 @@
  * Et de catégories (Lien avec GunType).
  * Il possède une date de validité.
  * 
+ * Un Membre peut posséder plusieurs licenses, mais une license n'a qu'un seul propriétaire
+ * 
  * Par exemlpe : 
  * J'ai un modèle 4, 
  * j'ai donc accès à une liste d'arme prédéfinie 
@@ -38,10 +40,10 @@ public class License {
     @Temporal(TemporalType.DATE)
     private Date dateOfValidity;
     
-    @OneToOne
+    @ManyToOne
     private LicenseType licenseType; //Le papier sur lequel on base la séléction d'arme dispo et qui reprend les calibres
     
-    //Classe associative néccéssaire : Une license peut contenir plusieurs type d'arme, et un type d'arme peut être repris par plusieurs licenses
+    //Classe associative  néccéssaire : Une license peut contenir plusieurs type d'arme, et un type d'arme peut être repris par plusieurs licenses
     @ManyToMany
     private List<GunType> gunTypes;//Les catégories législatives mentionées éventuelement sur la license, filtre supplémentaire
 

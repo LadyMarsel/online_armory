@@ -24,7 +24,7 @@ public class Gun {
     private Company company;//Fabricant
 
     //Un gun ne peut avoir qu'un seul type, mais un type peut être décliné en plusieurs modèles
-    @ManyToOne
+    @OneToOne
     private GunType gunType;//Revolver, Pistolet, Carabine ou Fusil
 
     //Un gun ne peut avoir qu'un seul mode de réarmement, mais un mode de réarmement peut être décliné en plusieurs modèles

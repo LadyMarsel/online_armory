@@ -43,15 +43,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="firingMode"> Mode de mise à feu:</label><!--C'est un objet enum dans le backend, à lier en liste de sélection-->
-                    <input type="text" class="form-control" id="firingMode"
+                    <label for="rearmingMode"> Mode de mise à feu:</label><!--C'est un objet enum dans le backend, à lier en liste de sélection-->
+                    <input type="text" class="form-control" id="rearmingMode"
                         required
-                        [(ngModel)]="gun.firingMode" name="firingMode"
-                        #firingMode="ngModel">
+                        [(ngModel)]="gun.rearmingMode" name="rearmingMode"
+                        #rearmingMode="ngModel">
 
-                    <div [hidden]="firingMode.valid || firingMode.pristine"
+                    <div [hidden]="rearmingMode.valid || rearmingMode.pristine"
                         class="card-panel red accent-1">
-                        Le nom du firingMode est requis.
+                        Le nom du rearmingMode est requis.
                     </div>
                 </div>
 

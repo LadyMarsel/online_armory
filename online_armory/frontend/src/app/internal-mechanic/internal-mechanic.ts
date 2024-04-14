@@ -3,5 +3,4 @@ export class InternalMechanic {
     name: string;
     description: string;
     url: string;
-
 }
