@@ -15,16 +15,17 @@ import { CommonModule } from '@angular/common';
   templateUrl: './form-gun.component.html',
   styleUrl: './form-gun.component.css'
 })
+
 export class FormGunComponent implements OnInit{
   @Input() gun: Gun;
   isAddForm: boolean;
 
   constructor(
-    private crudService : CrudService, 
+    private crudService: CrudService, 
     private router: Router
   ){}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.isAddForm = this.router.url.includes('add');
   }
 

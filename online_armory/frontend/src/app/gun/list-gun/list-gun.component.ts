@@ -9,7 +9,9 @@ import { CrudService } from '../../services/crud.service';
 @Component({
   selector: 'app-list-gun',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './list-gun.component.html',
   styleUrl: './list-gun.component.css'
 })

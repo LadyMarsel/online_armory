@@ -1,0 +1,5 @@
+<h2>Editer : {{ company?.name }} </h2>>
+<p *ngIf="company" class="center">
+    <img [src]="company.logo">
+</p>
+<app-form-company *ngIf="company" [company]="company"></app-form-company>
