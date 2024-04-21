@@ -1,0 +1,5 @@
+<h2>Editer : {{ ammunition?.name }} </h2>>
+<p *ngIf="ammunition" class="center">
+    <img [src]="ammunition.img">
+</p>
+<app-form-ammunition *ngIf="ammunition" [ammunition]="ammunition"></app-form-ammunition>

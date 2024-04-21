@@ -1,0 +1,12 @@
+
+//Pour Pg-Admin : 
+
+docker run --name my-pgadmin -p 82:80 -e 'PGADMIN_DEFAULT_EMAIL=emilie@hotmail.com' -e 'PGADMIN_DEFAULT_PASSWORD=pass123' --link armorydb -d dpage/pgadmin4 
+docker start my-pgadmin
+
+//Pour PostGres : 
+
+docker run --name armorydb -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+docker start armorydb
+
+juste un test sur mon portable avec un clone

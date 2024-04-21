@@ -1,0 +1,30 @@
+.item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.round-frame {
+  display: flex;
+  border-radius: 50%;
+  background-color: rgb(247, 162, 51);
+  width: 200px;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.round-frame:hover {
+  border: solid 2px rgb(131, 80, 14);
+}
+
+.item-image {
+  width: 100px;
+}
+
+.item-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(131, 80, 14);
+}

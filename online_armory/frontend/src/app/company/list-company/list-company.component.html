@@ -1,0 +1,21 @@
+<h1 class="center"> Liste de fabricants d'arme à feu</h1>>
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let company of companiesList" class="col m4 s6">
+            <div class="item-container" (click)="goToCompany(company)">
+                <div class="round-frame">
+                    <img class="item-image" [src]="company.logo" />
+                </div>
+                <p class="item-name">{{ company.name }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<a 
+    class="btn-floating btn-large waves-effect waves-light orange z-depth-3" 
+    style="position: fixed; bottom: 30px; right: 30px;"
+    (click)="goToAddCompany()"> 
+Ajouter 
+</a> 
+
