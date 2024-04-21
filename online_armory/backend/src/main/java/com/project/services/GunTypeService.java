@@ -23,7 +23,7 @@ public class GunTypeService {
     /* Read - Get all */
 
     public Iterable<GunType> getGunTypes(){
-        return gunTypeRepository.findAll();
+        return gunTypeRepository.findAll();  
     }
 
     /* Delete - Delete one */
