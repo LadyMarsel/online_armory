@@ -26,11 +26,20 @@ export class ListCaliberComponent implements OnInit {
   this.crudService.getCalibersList().subscribe(data => this.calibersList = data);
   }
 
-  goToCaliber(caliber: Caliber){
-    this.router.navigate(['/caliber', caliber.id]);
-  }
-
   goToAddCaliber() {
     this.router.navigate(['/caliber/add']);
   }
+
+  deleteCaliber(caliber: Caliber) {
+    this.crudService.deleteCaliberById(caliber.id).subscribe(() => this.goToCalibersList());
+  }
+
+  goToCalibersList(){
+    this.router.navigate(['/calibers']);
+  }
+
+  goToEditCaliber(caliber: Caliber) {
+    this.router.navigate(['/edit/caliber', caliber.id]);
+  }
 }
+

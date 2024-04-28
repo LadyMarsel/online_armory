@@ -3,9 +3,11 @@
 <div class="container">
     <div class="row">
         <div *ngFor="let caliber of calibersList" class="col m4 s6">
-            <div class="item-container" (click)="goToCaliber(caliber)">
+            <div class="item-container">
                 <p class="item-name">{{ caliber.metric }} metric</p>
                 <p class="item-name">{{ caliber.inch }} inch</p>
+                <p (click)="goToEditCaliber(caliber)">Editer</p>
+                <p (click)="deleteCaliber(caliber)">Supprimer</p>
             </div>
         </div>
     </div>

@@ -9,4 +9,18 @@ export class Ammunition {
     description: string;
     img: string;
 
+    constructor(
+        name: string = "",
+        company: Company = null,
+        caliber: Caliber = null,
+        description: string = "",
+        img: string = "",
+    ){
+        this.name = name;
+        this.company = company;
+        this.caliber = caliber;
+        this.description = description;
+        this.img = img;
+    }
+
 }

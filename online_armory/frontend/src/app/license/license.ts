@@ -6,6 +6,16 @@ export class License {
     member: Member;
     dateOfValidity: Date;
     licenseType: LicenseType;
+
+    constructor(
+        member: Member = null,
+        dateOfValidity: Date = null,
+        licenseType: LicenseType = null,
+    ){
+        this.member = member;
+        this.dateOfValidity = dateOfValidity;
+        this.licenseType = licenseType;
+    }
 }
 
 /*-----License-----

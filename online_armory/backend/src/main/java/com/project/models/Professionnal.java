@@ -25,11 +25,12 @@ public class Professionnal {
     private String email;
     private int phone;
     private String webSite;
+    private String img;
 
     @OneToOne
     private ProfessionnalType professionnalType;
 
-    public Professionnal(String name, String country, String year,String description, String adress, String email, int phone, String webSite, ProfessionnalType professionnalType){
+    public Professionnal(String name, String country, String year,String description, String adress, String email, int phone, String webSite, ProfessionnalType professionnalType, String img){
         this.name = name;
         this.country = country;
         this.year = year;
@@ -39,6 +40,7 @@ public class Professionnal {
         this.phone = phone;
         this.webSite = webSite;
         this.professionnalType = professionnalType;
+        this.img = img;
     }
     
 }

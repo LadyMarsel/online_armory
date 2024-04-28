@@ -1,0 +1,137 @@
+<form *ngIf="professionnal" (ngSubmit)="onSubmit()" #professionnalForm="ngForm">
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <div class="card-panel">
+
+                <div class="form-group">
+                    <label for="name"> name:</label>
+                    <input type="text" class="form-control" id="name"
+                        required
+                        [(ngModel)]="professionnal.name" name="name"
+                        #name="ngModel">
+
+                    <div [hidden]="name.valid || name.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du name est requis.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="img"> img:</label>
+                    <input type="url" class="form-control" id="img"
+                        required
+                        [(ngModel)]="professionnal.img" name="img"
+                        #img="ngModel">
+
+                    <div [hidden]="img.valid || img.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du img est requis.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="year"> year:</label>
+                    <input type="url" class="form-control" id="year"
+                        required
+                        [(ngModel)]="professionnal.year" name="year"
+                        #year="ngModel">
+
+                    <div [hidden]="year.valid || year.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du year est requis.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description"> description:</label>
+                    <input type="url" class="form-control" id="description"
+                        required
+                        [(ngModel)]="professionnal.description" name="description"
+                        #description="ngModel">
+
+                    <div [hidden]="description.valid || description.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du description est requis.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="adress"> img:</label>
+                    <input type="url" class="form-control" id="adress"
+                        required
+                        [(ngModel)]="professionnal.adress" name="adress"
+                        #adress="ngModel">
+
+                    <div [hidden]="adress.valid || adress.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du adress est requis.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email"> email:</label>
+                    <input type="url" class="form-control" id="email"
+                        required
+                        [(ngModel)]="professionnal.email" name="email"
+                        #email="ngModel">
+
+                    <div [hidden]="email.valid || email.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du email est requis.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone"> phone:</label>
+                    <input type="url" class="form-control" id="phone"
+                        required
+                        [(ngModel)]="professionnal.phone" name="phone"
+                        #phone="ngModel">
+
+                    <div [hidden]="phone.valid || phone.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du phone est requis.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="webSite"> webSite:</label>
+                    <input type="url" class="form-control" id="webSite"
+                        required
+                        [(ngModel)]="professionnal.webSite" name="webSite"
+                        #webSite="ngModel">
+
+                    <div [hidden]="webSite.valid || webSite.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du webSite est requis.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="professionnalType"> professionnalType:</label>
+                    <input type="url" class="form-control" id="professionnalType"
+                        required
+                        [(ngModel)]="professionnal.professionnalType" name="professionnalType"
+                        #professionnalType="ngModel">
+
+                    <div [hidden]="professionnalType.valid || professionnalType.pristine"
+                        class="card-panel red accent-1">
+                        Le nom du professionnalType est requis.
+                    </div>
+                </div>
+
+                <div class="divider">
+                    <div class="section center">
+                        <button type="submit"
+                            class="waves-effect waves-light btn"
+                            [disabled]="!professionnalForm.form.valid">
+                            Valider
+                        </button>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<h3 *ngIf="!professionnal" class="center">Aucun professionnal à éditer </h3>*/
+

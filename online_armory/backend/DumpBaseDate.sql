@@ -1,3 +1,5 @@
+---------- ITEM FIXES -----------
+
 INSERT INTO `gun_type` VALUES 
     (1,'Canon rayé','A','Arme de Poing','Revolver'),
     (2,'Canon rayé','B','Arme de Poing','Pistolet'),
@@ -31,4 +33,11 @@ INSERT INTO `rearming_mode` VALUES
     (4,'xx','Safe Action')
     ;
 
+---------- ITEM MODIFIABLES ----------
 
+INSERT INTO `gun` VALUES 
+    (1,'xx','Simple Action'),
+    (2,'xx','Double Action'),
+    (3,'xx','Dual Action'),
+    (4,'xx','Safe Action')
+    ;

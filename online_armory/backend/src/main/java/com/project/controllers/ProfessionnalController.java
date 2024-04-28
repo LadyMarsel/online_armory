@@ -96,6 +96,11 @@ public class ProfessionnalController {
                 currentProfessionnal.setProfessionnalType(professionnalType);
             }
 
+            String img = professionnal.getImg();
+            if(img != null){
+                currentProfessionnal.setImg(img);
+            }
+
             professionnalService.saveProfessionnal(currentProfessionnal);
             return currentProfessionnal;
 
