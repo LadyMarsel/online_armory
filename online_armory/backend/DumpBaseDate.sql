@@ -35,9 +35,4 @@ INSERT INTO `rearming_mode` VALUES
 
 ---------- ITEM MODIFIABLES ----------
 
-INSERT INTO `gun` VALUES 
-    (1,'xx','Simple Action'),
-    (2,'xx','Double Action'),
-    (3,'xx','Dual Action'),
-    (4,'xx','Safe Action')
-    ;
+
