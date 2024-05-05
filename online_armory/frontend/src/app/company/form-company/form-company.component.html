@@ -1,86 +1,57 @@
-<form *ngIf="company" (ngSubmit)="onSubmit()" #companyForm="ngForm">
-    <div class="row">
-        <div class="col s8 offset-s2">
-            <div class="card-panel">
+<div class="form-container">
+    <form *ngIf="company" (ngSubmit)="onSubmit()" #companyForm="ngForm">
 
-                <div class="form-group">
-                    <label for="name"> Nom:</label>
-                    <input type="text" class="form-control" id="name"
-                        required
-                        [(ngModel)]="company.name" name="name"
-                        #name="ngModel">
-                    
-                    <div [hidden]="name.valid || name.pristine"
-                        class="card-panel red accent-1">
-                        Le nom du company est requis.
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="country"> Pays:</label> <!-- faire une liste des pays en interne ?-->
-                    <input type="text" class="form-control" id="country"
-                        required
-                        [(ngModel)]="company.country" name="country"
-                        #country="ngModel">
-
-                    <div [hidden]="country.valid || country.pristine"
-                        class="card-panel red accent-1">
-                        Le nom du country est requis.
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="year"> Année de création:</label><!-- Faire un calendrier de séléction ?-->
-                    <input type="number" class="form-control" id="year"
-                        required
-                        [(ngModel)]="company.year" name="year"
-                        #year="ngModel">
-
-                    <div [hidden]="year.valid || year.pristine"
-                        class="card-panel red accent-1">
-                        Le nom du year est requis.
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="description"> Description:</label>
-                    <input type="text" class="form-control" id="description"
-                        required
-                        [(ngModel)]="company.description" name="description"
-                        #description="ngModel">
-                    
-                    <div [hidden]="description.valid || description.pristine"
-                        class="card-panel red accent-1">
-                        Le nom du description est requis.
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="logo"> logo:</label><!-- Il me faut une image, pas de titre, avec des required de taille ou de mg-->
-                    <input type="url" class="form-control" id="logo"
-                        required
-                        [(ngModel)]="company.logo" name="logo"
-                        #logo="ngModel">
-
-                    <div [hidden]="logo.valid || logo.pristine"
-                        class="card-panel red accent-1">
-                        Le nom du logo est requis.
-                    </div>
-                </div>
-
-                <div class="divider">
-                    <div class="section center">
-                        <button type="submit"
-                            class="waves-effect waves-light btn"
-                            [disabled]="!companyForm.form.valid">
-                            Valider
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="name">Nom:</label>
+            <input type="text" class="form-control" id="name" 
+                required    
+                [(ngModel)]="company.name" name="name"
+                #name="ngModel">
         </div>
-    </div>
-</form>
-<h3 *ngIf="!company" class="center">Aucun company à éditer </h3>*/
 
+        <div class="form-group">
+            <label for="country">Pays:</label>
+            <select class="form-control" id="country"
+                required    
+                [(ngModel)]="company.country" name="country"
+                #country="ngModel" >
 
+                <option value="" disabled selected>Selectionner</option>
+                <!-- Options loaded from database 
+                <option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</option>-->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="year">Année de création:</label>
+            <input type="number" class="form-control" id="year"
+                required    
+                [(ngModel)]="company.year" name="year"
+                #year="ngModel">
+            <!-- year picker library here ? -->
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" 
+                required    
+                [(ngModel)]="company.description" name="description"
+                #description="ngModel">
+            </textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="logo">Logo Upload:</label>
+            <input type="url" class="form-control" id="logo"
+                required
+                [(ngModel)]="company.logo" name="logo"
+                #logo="ngModel">
+        </div>
+        
+        <button type="submit" class="btn btn-primary" 
+            [disabled]="!companyForm.form.valid">
+            Valider
+        </button>
+    </form>
+</div>
+<h3 *ngIf="!company" class="center">Aucun fabricant à éditer </h3>

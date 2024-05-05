@@ -1,0 +1,47 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form_container {
+    margin: auto;
+    width: 500px;
+    display: flex;
+    background-color: rgb(237, 241, 243);
+    height: 400px;
+    flex-direction: column;
+    border: 2px solid cadetblue;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px gray;
+}
+
+.form_row {
+    display: flex;
+    width: 100%;
+    padding: 10 px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+label {
+    width: 20%;
+    font-size: larger;
+    color: rgb(73, 120, 122)
+}
+
+input {
+    width: 80%;
+    font-size: larger;
+    color: rgb(51, 83, 84);
+    border: none;
+    border-bottom: 2px solid cadetblue;
+}
+
+select {
+    font-size: larger;
+    color: rgb(51, 83, 84);
+}
