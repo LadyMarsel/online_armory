@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row">
-        <div *ngFor="let company of companiesList" class="col m4 s6">
+        <div *ngFor="let company of companiesList">
             <div class="item-container" (click)="goToCompany(company)">
                 <div class="round-frame">
                     <img class="item-image" [src]="company.logo" />
@@ -12,10 +12,9 @@
         </div>
     </div>
 </div>
-<a 
-    class="btn-floating btn-large waves-effect waves-light orange z-depth-3" 
+<button
     style="position: fixed; bottom: 30px; right: 30px;"
     (click)="goToAddCompany()"> 
-Ajouter 
-</a> 
+    Ajouter 
+</button> 
 

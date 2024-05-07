@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Gun } from '../gun/gun';
 import { Company } from '../company/company';
-import { COMPANIES } from '../company/mock-companies';
 import { Ammunition } from '../ammunition/ammunition';
-import { AMMUNITIONS } from '../ammunition/mock-ammunition';
 import { Observable, catchError, of, tap } from 'rxjs';
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { License } from '../license/license';
 import { Professionnal } from '../professionnal/professionnal';
 import { Caliber } from '../caliber/caliber';
@@ -166,6 +164,7 @@ getCompanyById(companyId: number):Observable<Company|undefined>{
 /* Create - Create one */
 
 addCompany(company: Company): Observable<Company> {
+  console.log('addCompany in service');
   const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

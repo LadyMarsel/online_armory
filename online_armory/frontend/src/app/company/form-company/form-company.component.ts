@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
 export class FormCompanyComponent implements OnInit{
   @Input() company: Company;
   isAddForm: boolean;
-
+  countries:string[]=['france','belgique'];
   constructor(
     private crudService: CrudService, 
     private router: Router
@@ -31,6 +31,7 @@ export class FormCompanyComponent implements OnInit{
   }
 
   onSubmit(){
+    console.log('onSubmit()');
     if(this.isAddForm){
       this.crudService.addCompany(this.company).subscribe((company: Company) => this.router.navigate(['/company', company.id]));
     }else{

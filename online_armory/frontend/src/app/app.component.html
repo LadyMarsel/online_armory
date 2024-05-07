@@ -1,10 +1,7 @@
- <!-- Load an icon library 
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
--->
- <div class="navbar">
-    <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Acceuil</a>
+<div class="navbar">
+    <a class="active" href="#">Acceuil</a>
     <div class="dropdown">
-        <button class="dropbtn"><i class="fa fa-fw fa-book"></i>Armurerie</button>
+        <button class="dropbtn">Armurerie</button>
             <div class="dropdown-content">
             <a routerLink="/companies">Fabricants</a>
             <a routerLink="/guns">Armes</a>
@@ -12,9 +9,9 @@
             <a routerLink="/calibers">Calibres</a>
         </div>
     </div>
-    <a routerLink="/professionnals"><i class="fa fa-fw fa-address-book"></i>Professionnels</a>
-    <a routerLink="/licenses"><i class="fa fa-fw fa-id-card"></i>Licenses</a>
-    <a routerLink="/member"><i class="fa fa-fw fa-id-card"></i>Espace Membre</a>
- </div> 
+    <a routerLink="/professionnals">Professionnels</a>
+    <a routerLink="/licenses">Licenses</a>
+    <a routerLink="/member">Espace Membre</a>
+</div> 
 
 <router-outlet></router-outlet>

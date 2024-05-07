@@ -15,10 +15,7 @@
                 required    
                 [(ngModel)]="company.country" name="country"
                 #country="ngModel" >
-
-                <option value="" disabled selected>Selectionner</option>
-                <!-- Options loaded from database 
-                <option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</option>-->
+                <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
             </select>
         </div>
 

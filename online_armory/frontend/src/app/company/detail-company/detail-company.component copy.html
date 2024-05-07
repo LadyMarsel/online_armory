@@ -1,0 +1,41 @@
+<div class="container">
+    <div *ngIf="company" class="row" class="center-align">
+        <div class="col">
+            <h2 class="header">{{ company.name }}</h2>
+            <div class="card horizontal hoverable">
+                <div class="card-image">
+                    <img [src]="company.logo">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <table class="border striped">
+                            <tbody>
+                                <tr>
+                                    <td>Nom</td>
+                                    <td><strong>{{ company.name }}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Pays</td>
+                                    <td><strong>{{ company.country }}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Année</td>
+                                    <td><strong>{{ company.year }}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td><strong>{{ company.description }}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-action">
+                        <a (click)="goToCompaniesList()">Retour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h4 *ngIf='!company' class="center"> Aucune companie trouvé</h4>
+

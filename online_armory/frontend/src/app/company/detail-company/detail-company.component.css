@@ -1,0 +1,65 @@
+.company_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:800px;
+    height: 300px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: white ;
+}
+
+.left_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    border-radius: 15px;
+
+    background-color: #FFBD59;
+}
+
+.center_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    background-color: beige;
+}
+.center_details
+{
+    display: flex;
+    flex-direction: row; 
+}
+
+.right_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15%;
+    border-radius: 20px;
+
+    background-color: #FFBD59;
+}
+
+.logo_label
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: large;
+}
+
+.description
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: medium;
+}
+.details
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(57, 57, 57);
+    font-size: small;
+    font-style: italic;
+}
