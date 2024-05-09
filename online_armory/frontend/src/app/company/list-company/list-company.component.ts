@@ -3,6 +3,7 @@ import { Company } from '../company';
 import { Router } from '@angular/router';
 import { CrudService } from '../../services/crud.service';
 import { CommonModule } from '@angular/common';
+//import { MatCarouselModule} from '@ng-mat-carousel'
 
 @Component({
   selector: 'app-list-company',
@@ -15,7 +16,8 @@ import { CommonModule } from '@angular/common';
 })
 
 export class ListCompanyComponent implements OnInit {
-  companiesList: Company[];
+  companiesList: Company[] = [];
+  startIndex: number = 0;
 
   constructor(
     private router: Router,
@@ -32,6 +34,22 @@ export class ListCompanyComponent implements OnInit {
 
   goToAddCompany() {
     this.router.navigate(['/company/add']);
+  }
+
+  goToLeft(){
+    if(this.startIndex > 0){
+      this.startIndex--;
+    }else {
+      this.startIndex = this.companiesList.length;
+    }
+  }
+
+  goToRight(){
+    if(this.startIndex < this.companiesList.length){
+      this.startIndex++;
+    }else{
+      this.startIndex = 0;
+    }
   }
 
 }

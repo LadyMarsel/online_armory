@@ -1,5 +1,37 @@
-<h1 class="center"> Liste de fabricants d'arme à feu</h1>>
+<h1 class="title"> Liste de fabricants d'arme à feu</h1>>
 
+<button class="left_button" click()="goToLeft()"> Gauche </button>
+<div class="container">
+
+    <!-- Bulle 1 -->
+    <div *ngIf="startIndex<companiesList.length" class="item-container" (click)="goToCompany(companiesList[startIndex])">
+        <div class="round-frame">
+            <img class="item-image" [src]="" />
+        </div>
+        <p class="item-name">{{companiesList[startIndex].name}}</p>
+    </div>
+
+    <!-- Bulle 2 -->
+    <div *ngIf="startIndex+1<companiesList.length" class="item-container" (click)="goToCompany(companiesList[startIndex+1])">
+        <div class="round-frame">
+            <img class="item-image" [src]="" />
+        </div>
+        <p class="item-name">{{companiesList[startIndex+1].name}}</p>
+    </div>
+
+    <!-- Bulle 3 -->
+    <div *ngIf="startIndex+2<companiesList.length" class="item-container" (click)="goToCompany(companiesList[startIndex+2])">
+        <div class="round-frame">
+            <img class="item-image" [src]="" />
+        </div>
+        <p class="item-name">{{companiesList[startIndex+2].name}}</p>
+    </div>
+
+</div>
+
+<button class="right_button" click()="goToRight()"> Droite </button>
+
+<!--
 <div class="container">
     <div class="row">
         <div *ngFor="let company of companiesList">
@@ -12,8 +44,8 @@
         </div>
     </div>
 </div>
-<button
-    style="position: fixed; bottom: 30px; right: 30px;"
+-->
+<button class="add_button"
     (click)="goToAddCompany()"> 
     Ajouter 
 </button> 

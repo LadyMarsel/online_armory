@@ -12,6 +12,10 @@ import { Caliber } from '../caliber/caliber';
 export class CrudService {
   baseUrl='http://localhost:8080'
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
   constructor(
     private http: HttpClient
     ){}
@@ -50,11 +54,7 @@ export class CrudService {
   /* Create - Create one */
 
   addGun(gun: Gun): Observable<Gun> {
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
-
-    return this.http.post<Gun>(this.baseUrl+'/gun', gun, httpOptions).pipe(
+    return this.http.post<Gun>(this.baseUrl+'/gun', gun, this.httpOptions).pipe(
       tap((response) => this.log(response)),
       catchError((error) => this.handleError(error, null))
     );
@@ -63,11 +63,7 @@ export class CrudService {
   /* Update - Update an existing one */
 
   updateGun(gun: Gun): Observable<Gun|undefined> {
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
-
-    return this.http.put(this.baseUrl+'/gun', gun, httpOptions).pipe(
+    return this.http.put(this.baseUrl+'/gun', gun, this.httpOptions).pipe(
       tap((response) => this.log(response)),
       catchError((error) => this.handleError(error, null))
     );
@@ -107,11 +103,7 @@ getAmmunitionById(ammunitionId: number):Observable<Ammunition|undefined>{
 /* Create - Create one */
 
 addAmmunition(ammunition: Ammunition): Observable<Ammunition> {
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  return this.http.post<Ammunition>(this.baseUrl+'/ammunition', ammunition, httpOptions).pipe(
+  return this.http.post<Ammunition>(this.baseUrl+'/ammunition', ammunition, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -120,11 +112,7 @@ addAmmunition(ammunition: Ammunition): Observable<Ammunition> {
 /* Update - Update an existing one */
 
 updateAmmunition(ammunition: Ammunition): Observable<Ammunition|undefined> {
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  return this.http.put(this.baseUrl+'/ammunition', ammunition, httpOptions).pipe(
+  return this.http.put(this.baseUrl+'/ammunition', ammunition, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -164,12 +152,7 @@ getCompanyById(companyId: number):Observable<Company|undefined>{
 /* Create - Create one */
 
 addCompany(company: Company): Observable<Company> {
-  console.log('addCompany in service');
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  return this.http.post<Company>(this.baseUrl+'/company', company, httpOptions).pipe(
+  return this.http.post<Company>(this.baseUrl+'/company', company, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -178,11 +161,7 @@ addCompany(company: Company): Observable<Company> {
 /* Update - Update an existing one */
 
 updateCompany(company: Company): Observable<Company|undefined> {
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  return this.http.put(this.baseUrl+'/company', company, httpOptions).pipe(
+  return this.http.put(this.baseUrl+'/company', company, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -222,11 +201,7 @@ getLicenseById(licenseId: number):Observable<License|undefined>{
 /* Create - Create one */
 
 addLicense(license: License): Observable<License> {
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  return this.http.post<License>(this.baseUrl+'/license', license, httpOptions).pipe(
+  return this.http.post<License>(this.baseUrl+'/license', license, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -235,11 +210,7 @@ addLicense(license: License): Observable<License> {
 /* Update - Update an existing one */
 
 updateLicense(license: License): Observable<License|undefined> {
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  return this.http.put(this.baseUrl+'/license', license, httpOptions).pipe(
+  return this.http.put(this.baseUrl+'/license', license, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -279,11 +250,7 @@ getProfessionnalById(professionnalId: number):Observable<Professionnal|undefined
 /* Create - Create one */
 
 addProfessionnal(professionnal: Professionnal): Observable<Professionnal> {
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  return this.http.post<Professionnal>(this.baseUrl+'/professionnal', professionnal, httpOptions).pipe(
+  return this.http.post<Professionnal>(this.baseUrl+'/professionnal', professionnal, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -292,11 +259,7 @@ addProfessionnal(professionnal: Professionnal): Observable<Professionnal> {
 /* Update - Update an existing one */
 
 updateProfessionnal(professionnal: Professionnal): Observable<Professionnal|undefined> {
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  return this.http.put(this.baseUrl+'/professionnal', professionnal, httpOptions).pipe(
+  return this.http.put(this.baseUrl+'/professionnal', professionnal, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -336,11 +299,7 @@ getCaliberById(caliberId: number):Observable<Caliber|undefined>{
 /* Create - Create one */
 
 addCaliber(caliber: Caliber): Observable<Caliber> {
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  return this.http.post<Caliber>(this.baseUrl+'/caliber', caliber, httpOptions).pipe(
+  return this.http.post<Caliber>(this.baseUrl+'/caliber', caliber, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -349,11 +308,7 @@ addCaliber(caliber: Caliber): Observable<Caliber> {
 /* Update - Update an existing one */
 
 updateCaliber(caliber: Caliber): Observable<Caliber|undefined> {
-  const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
-  return this.http.put(this.baseUrl+'/caliber', caliber, httpOptions).pipe(
+  return this.http.put(this.baseUrl+'/caliber', caliber, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -369,7 +324,7 @@ deleteCaliberById(caliberId: number): Observable<null> {
 }
 
 /*
------------------------------------ CALIBER -----------------------------------
+----------------------------------- XX -----------------------------------
 */
   
 }

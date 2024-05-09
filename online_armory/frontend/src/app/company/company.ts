@@ -19,4 +19,5 @@ export class Company {
         this.description = description;
         this.logo = logo;
     }
+
 }

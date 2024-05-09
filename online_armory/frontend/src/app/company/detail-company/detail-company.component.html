@@ -1,10 +1,14 @@
 <div class="company_card">
     <div class="left_column">
-        <img src="#" alt="company logo" />
+        <img class="logo_image" src="assets/glock.png" alt="company logo" />
         <p class="logo_label">{{ company.name }}</p>
     </div>
     <div class="center_column">
-
+        <p class="description">{{company.description}} </p>
+        <ul class="center_details">
+            <li class="details" >Pays:{{company.country}}</li>
+            <li class="details">Année:{{company.year}}</li>
+        </ul>
     </div>
     <div class="right_column"></div>
 </div>
