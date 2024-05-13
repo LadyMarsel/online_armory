@@ -52,4 +52,12 @@ export class ListCompanyComponent implements OnInit {
     }
   }
 
+  comparaison(nb1: number, nb2: number){
+    if(nb1 < nb2){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
 }

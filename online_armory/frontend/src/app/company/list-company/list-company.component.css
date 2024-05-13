@@ -40,9 +40,13 @@
 }
 
 .right_button{
-
+  position: fixed;
+  justify-content: center;
+  right: 30px;
 }
 
-.left_button{
-
+.left-button{
+  position: fixed;
+  justify-content: center;
+  left: 30px;
 }
