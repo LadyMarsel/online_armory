@@ -1,6 +1,7 @@
 import { Caliber } from "../caliber/caliber";
 import { Company } from "../company/company";
 import { GunType } from "../gyn-type/gun-type";
+import { InternalMechanic } from "../internal-mechanic/internal-mechanic";
 import { RearmingMode } from "../rearming-mode/rearming-mode";
 
 export class Gun {
@@ -9,6 +10,7 @@ export class Gun {
     gunType: GunType;
     caliber: Caliber;
     rearmingMode: RearmingMode;
+    internalMechanic: InternalMechanic;
     name: string;
     country: string;
     year: number;
@@ -24,6 +26,7 @@ export class Gun {
         gunType: GunType = null,
         caliber: Caliber = null,
         rearmingMode: RearmingMode = null,
+        internalMechanic: InternalMechanic = null,
         name: string = "",
         country: string = "",
         year: number = 0,
@@ -38,6 +41,7 @@ export class Gun {
         this.gunType = gunType;
         this.caliber = caliber;
         this.rearmingMode = rearmingMode;
+        this.internalMechanic = internalMechanic;
         this.name = name;
         this.country = country;
         this.year = year;

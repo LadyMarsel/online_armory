@@ -39,14 +39,12 @@
   position: fixed; bottom: 30px; right: 30px;
 }
 
-.right_button{
-  position: fixed;
-  justify-content: center;
-  right: 30px;
-}
 
-.left-button{
-  position: fixed;
-  justify-content: center;
-  left: 30px;
+
+.navigate_button{
+font-weight: 900;
+padding : 10px;
+font-size: 56px;
+align-self: center;
+color:rgb(107, 106, 106);
 }

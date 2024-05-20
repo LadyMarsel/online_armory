@@ -1,20 +1,26 @@
-export class Member {
+export class User {
     id: number;
     firstName: string;
     lastName: string;
+    username: string;
+    role: string;
     email: string;
-    pswd: string;
+    password: string;
 
     constructor(
         firstName: string = "",
         lastName: string = "",
+        username: string = "",
+        role: string = "",
         email: string = "",
-        pswd: string = "",
+        password: string = "",
     ){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.username = username;
+        this.role = role;
         this.email = email;
-        this.pswd = pswd;
+        this.password = password;
     }
 
 }

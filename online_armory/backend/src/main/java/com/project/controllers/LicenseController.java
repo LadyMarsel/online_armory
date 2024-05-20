@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.project.models.License;
 import com.project.models.LicenseType;
-import com.project.models.Member;
+import com.project.models.WSUser;
 import com.project.services.LicenseService;
 
 
@@ -53,10 +53,10 @@ public class LicenseController {
         if(l.isPresent()){
             License currentLicense = l.get();
 
-            // ! Member doit être existant !
-            Member member = license.getMember();
-            if(member != null){
-                currentLicense.setMember(member);
+            // ! user doit être existant !
+            WSUser WSUser = license.getWSUser();
+            if(WSUser != null){
+                currentLicense.setWSUser(WSUser);
             }
 
             Date dateOfValidity = license.getDateOfValidity();

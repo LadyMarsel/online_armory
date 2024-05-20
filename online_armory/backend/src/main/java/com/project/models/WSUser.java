@@ -1,4 +1,4 @@
-/*-----Member-----
+/*-----User-----
  * Membre du site
  */
 package com.project.models;
@@ -14,24 +14,34 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Member {
+public class WSUser {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String firstName;
     private String lastName;
+    private String username;
+    private String role;
     private String email;
-    private Long pswd;
+    private String password;
 
     @OneToMany
     private List<License> licenses;
 
-    public Member(String firstName, String lastName, String email, Long pswd){
+    /*public WSUser(String firstName, String lastName, String userName, String role, String email, String pswd){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.userName = userName;
+        this.role = role;
         this.email = email;
         this.pswd = pswd;
+    }*/
+
+    public WSUser(String username, String password, String role){
+        this.username = username;
+        this.password = password;
+        this.role = role;
     }
     
 }

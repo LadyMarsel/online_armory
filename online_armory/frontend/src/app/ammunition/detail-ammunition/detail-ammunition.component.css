@@ -1,0 +1,88 @@
+.ammunition_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:800px;
+    min-height: 300px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: white ;
+    box-shadow: 4px 4px 8px rgb(0,0,0,0.2);
+    border: 3px solid rgb(135, 135, 134);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.left_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    border-radius: 15px;
+}
+
+.center_column {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.center_details
+{
+    display: flex;
+    flex-direction: row; 
+    margin: 0px;
+    padding: 0px;
+}
+
+.right_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15%;
+    border-radius: 20px;
+
+    background-color: #FFBD59;
+}
+
+.ammunition_image
+{
+    width:100%;
+    background-color: #FFBD59;
+
+}
+
+.img_label
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+.description
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: large;
+    border : 2px solid rgb(135, 135, 134);
+    border-radius: 15px;
+    padding:7px;
+    padding-bottom: 20px;
+    margin: 0px;
+    margin-top: 10px;
+
+}
+.details
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(57, 57, 57);
+    font-size: medium;
+    font-style: italic;
+    list-style-type: none;
+    width: fit-content;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 20px;
+}

@@ -1,45 +1,21 @@
-<div *ngIf="gun" class="row" class="center-align">
-    <div class="col">
-        <h2 class="header">{{ gun.name }}</h2>
-        <div class="card horizontal hoverable">
-            <div class="card-image">
-                <img [src]="gun.img">
-            </div>
-            <div class="card-stacked">
-                <div class="card-content">
-                    <table class="border striped">
-                        <tbody>
-                            <tr>
-                                <td>Nom</td>
-                                <td><strong>{{ gun.name }}</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Pays</td>
-                                <td><strong>{{ gun.country }}</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Companie</td>
-                                <td><strong>{{ gun.company.name }}</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Année</td>
-                                <td><strong>{{ gun.year }}</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Description</td>
-                                <td><strong>{{ gun.description }}</strong></td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="card-action">
-                    <a (click)="goToGunsList()">Retour</a>
-                    <a (click)="goToEditGun(gun)">Éditer</a>
-                    <a (click)="deleteGun(gun)">Supprimer</a>
-                </div>
-            </div>
-        </div>
+<div class="gun_card">
+    <div class="left_column">
+        <img class="gun_image" src="assets/glock.png" alt="gun img" />
+        <p class="gun_label">{{ gun.name }}</p>
     </div>
+    <div class="center_column">
+        <p class="description">{{gun.description}} </p>
+        <ul class="center_details">
+            <li class="details" >Pays:{{gun.country}}</li>
+            <li class="details">Année:{{gun.year}}</li>
+            <li class="details">Fabricant:{{gun.company.name}}</li>
+        </ul>
+    </div>
+    <div class="right_column"></div>
+</div>
+<div class="buttons">
+    <button (click)="goToGunsList()">Retour</button>
+    <button (click)="goToEditGun(gun)">Éditer</button>
+    <button (click)="deleteGun(gun)">Supprimer</button>
 </div>
 <h4 *ngIf='!gun' class="center"> Aucun gun trouvé</h4>

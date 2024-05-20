@@ -1,10 +1,10 @@
 <h1 class="title"> Liste de fabricants d'arme à feu</h1>
 
-<button class="left-button" (click)="goToLeft()"> Gauche </button>
 <div class="container">
+    <i class="fa-solid fa-circle-chevron-left navigate_button" (click)="goToLeft()"></i>
 
     <!-- Bulle 1 -->
-    <div *ngIf="comparaison(startIndex, companiesList.length)" class="item-container" (click)="goToCompany(companiesList[startIndex])">
+    <div class="item-container" (click)="goToCompany(companiesList[startIndex])">
         <div class="round-frame">
             <img class="item-image" [src]="" />
         </div>
@@ -12,24 +12,25 @@
     </div>
 
     <!-- Bulle 2 -->
-    <div *ngIf="comparaison(startIndex+1, companiesList.length)" class="item-container" (click)="goToCompany(companiesList[startIndex+1])">
+    <div  class="item-container" (click)="goToCompany(companiesList[startIndex+1])">
         <div class="round-frame">
             <img class="item-image" [src]="" />
         </div>
-        <p class="item-name">{{companiesList[startIndex+1].name}}</p>
+        <p class="item-name">{{companiesList[(startIndex+1)%companiesList.length].name}}</p>
     </div>
 
     <!-- Bulle 3 -->
-    <div *ngIf="comparaison(startIndex+2, companiesList.length)" class="item-container" (click)="goToCompany(companiesList[startIndex+2])">
+    <div  class="item-container" (click)="goToCompany(companiesList[startIndex+2])">
         <div class="round-frame">
             <img class="item-image" [src]="" />
         </div>
-        <p class="item-name">{{companiesList[startIndex+2].name}}</p>
+        <p class="item-name">{{companiesList[(startIndex+2)%companiesList.length].name}}</p>
     </div>
+    <i class="fa-solid fa-circle-chevron-right navigate_button" (click)="goToRight()"></i>
 
 </div>
 
-<button class="right_button" (click)="goToRight()"> Droite </button>
+
 
 <!--
 <div class="container">

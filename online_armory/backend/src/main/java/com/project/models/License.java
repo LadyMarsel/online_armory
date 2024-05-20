@@ -35,7 +35,7 @@ public class License {
     
     //Une license n'a qu'un seul membre, mais un membre peut avoir plusieurs licenses
     @ManyToOne
-    private Member member;
+    private WSUser WSUser;
     
     @Temporal(TemporalType.DATE)
     private Date dateOfValidity;
@@ -47,8 +47,8 @@ public class License {
     @ManyToMany
     private List<GunType> gunTypes;//Les catégories législatives mentionées éventuelement sur la license, filtre supplémentaire
 
-    public License(Member member, Date dateOfValidity, LicenseType licenseType){
-        this.member = member;
+    public License(WSUser WSUser, Date dateOfValidity, LicenseType licenseType){
+        this.WSUser = WSUser;
         this.dateOfValidity = dateOfValidity;
         this.licenseType = licenseType;
     }

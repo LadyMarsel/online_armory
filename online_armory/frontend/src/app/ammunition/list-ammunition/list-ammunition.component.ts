@@ -14,7 +14,8 @@ import { Ammunition } from '../ammunition';
 })
 
 export class ListAmmunitionComponent implements OnInit{
-  ammunitionsList: Ammunition[];
+  ammunitionsList: Ammunition[] = [];
+  startIndex: number = 0;
 
   constructor(
     private router: Router,
@@ -31,6 +32,18 @@ export class ListAmmunitionComponent implements OnInit{
 
   goToAddAmmunition() {
     this.router.navigate(['/ammunition/add']);
+  }
+
+  goToLeft(){
+    if(this.startIndex == 0){
+      this.startIndex=this.ammunitionsList.length-1;
+    }else{
+    this.startIndex--;
+    }
+  }
+
+  goToRight(){
+    this.startIndex = (this.startIndex+1)%this.ammunitionsList.length;
   }
 
 }

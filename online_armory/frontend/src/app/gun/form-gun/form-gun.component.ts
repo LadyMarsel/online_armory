@@ -19,6 +19,8 @@ import { CommonModule } from '@angular/common';
 export class FormGunComponent implements OnInit{
   @Input() gun: Gun;
   isAddForm: boolean;
+  countries: Country[];
+  companies: Company[];
 
   constructor(
     private crudService: CrudService, 
@@ -26,6 +28,8 @@ export class FormGunComponent implements OnInit{
   ){}
 
   ngOnInit() {
+    this.companies = this.crudService.getCompaniesList();
+    this.countries = this.crudService.getCountriesList()
     this.isAddForm = this.router.url.includes('add');
   }
 

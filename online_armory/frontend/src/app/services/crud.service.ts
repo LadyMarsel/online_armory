@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { License } from '../license/license';
 import { Professionnal } from '../professionnal/professionnal';
 import { Caliber } from '../caliber/caliber';
+import { ProfessionnalType } from '../professionnal-type/professionnal-type';
 
 @Injectable({providedIn: 'root'})
 export class CrudService {
@@ -27,6 +28,10 @@ export class CrudService {
   private handleError(error: Error, errorValue: any) {
     console.error(error);
     return of(errorValue);
+  }
+
+  public getCountriesList(): Observable<Contry[]>{
+    return this.http.get<Country[]>();
   }
 
 /*
@@ -272,6 +277,11 @@ deleteProfessionnalById(professionnalId: number): Observable<null> {
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, undefined))
   );
+}
+
+getProfessionnalTypesList(): Observable<ProfessionnalType[]>{
+  return this.http.get<ProfessionnalType[]>(this.baseUrl+'/professionnal/');
+
 }
 
 /*

@@ -4,6 +4,7 @@ import { CrudService } from '../../services/crud.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ProfessionnalType } from '../../professionnal-type/professionnal-type';
 
 @Component({
   selector: 'app-form-professionnal',
@@ -19,6 +20,8 @@ import { CommonModule } from '@angular/common';
 export class FormProfessionnalComponent implements OnInit{
   @Input() professionnal: Professionnal;
   isAddForm: boolean;
+  professionnalTypes: ProfessionnalType[];
+  countries: Country[];
 
   constructor(
     private crudService: CrudService, 
@@ -26,6 +29,8 @@ export class FormProfessionnalComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
+    this.professionnalTypes = this.crudService.getProfessionnalTypesList();
+    this.countries = this.crudService.getCountriesList()
     this.isAddForm = this.router.url.includes('add');
   }
 

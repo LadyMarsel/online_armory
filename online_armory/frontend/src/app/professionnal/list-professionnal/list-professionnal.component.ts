@@ -8,7 +8,7 @@ import { CrudService } from '../../services/crud.service';
   selector: 'app-list-professionnal',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './list-professionnal.component.html',
   styleUrl: './list-professionnal.component.css'

@@ -17,7 +17,8 @@ import { CrudService } from '../../services/crud.service';
 })
 
 export class ListGunComponent implements OnInit {
-  gunsList: Gun[];
+  gunsList: Gun[] = [];
+  startIndex: number = 0;
 
   constructor(
     private router: Router,
@@ -34,6 +35,18 @@ export class ListGunComponent implements OnInit {
 
   goToAddGun() {
     this.router.navigate(['/gun/add']);
+  }
+
+  goToLeft(){
+    if(this.startIndex == 0){
+      this.startIndex=this.gunsList.length-1;
+    }else{
+    this.startIndex--;
+    }
+  }
+
+  goToRight(){
+    this.startIndex = (this.startIndex+1)%this.gunsList.length;
   }
 
 }

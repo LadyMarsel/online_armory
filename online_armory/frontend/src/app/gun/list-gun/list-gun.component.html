@@ -18,3 +18,41 @@
     (click)="goToAddGun()"> 
 Ajouter 
 </a> 
+
+<h1 class="title"> Liste d'arme à feu</h1>
+
+<div class="container">
+    <i class="fa-solid fa-circle-chevron-left navigate_button" (click)="goToLeft()"></i>
+
+    <!-- Bulle 1 -->
+    <div class="item-container" (click)="goToGun(gunsList[startIndex])">
+        <div class="round-frame">
+            <img class="item-image" [src]="" />
+        </div>
+        <p class="item-name">{{gunsList[startIndex].name}}</p>
+    </div>
+
+    <!-- Bulle 2 -->
+    <div  class="item-container" (click)="goToGun(gunsList[startIndex+1])">
+        <div class="round-frame">
+            <img class="item-image" [src]="" />
+        </div>
+        <p class="item-name">{{gunsList[(startIndex+1)%gunsList.length].name}}</p>
+    </div>
+
+    <!-- Bulle 3 -->
+    <div  class="item-container" (click)="goToGun(gunsList[startIndex+2])">
+        <div class="round-frame">
+            <img class="item-image" [src]="" />
+        </div>
+        <p class="item-name">{{gunsList[(startIndex+2)%gunsList.length].name}}</p>
+    </div>
+    <i class="fa-solid fa-circle-chevron-right navigate_button" (click)="goToRight()"></i>
+
+</div>
+
+<button class="add_button"
+    (click)="goToAddGun()"> 
+    Ajouter 
+</button> 
+

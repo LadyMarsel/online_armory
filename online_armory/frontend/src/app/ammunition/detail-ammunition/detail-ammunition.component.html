@@ -1,41 +1,20 @@
-<div *ngIf="ammunition" class="row" class="center-align">
-    <div class="col">
-        <h2 class="header">{{ ammunition.name }}</h2>
-        <div class="card horizontal hoverable">
-            <div class="card-image">
-                <img [src]="ammunition.img">
-            </div>
-            <div class="card-stacked">
-                <div class="card-content">
-                    <table class="border striped">
-                        <tbody>
-                            <tr>
-                                <td>Nom</td>
-                                <td><strong>{{ ammunition.name }}</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Companie</td>
-                                <td><strong>{{ ammunition.company }}</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Calibre</td>
-                                <td><strong>{{ ammunition.caliber }}</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Description</td>
-                                <td><strong>{{ ammunition.description }}</strong></td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="card-action">
-                    <a (click)="goToAmmunitionsList()">Retour</a>
-                    <a (click)="goToEditAmmunition(ammunition)">Éditer</a>
-                    <a (click)="deleteAmmunition(ammunition)">Supprimer</a>
-                </div>
-            </div>
-        </div>
+<div class="ammunition_card">
+    <div class="left_column">
+        <img class="ammunition_image" src="assets/glock.png" alt="ammunition img" />
+        <p class="img_label">{{ ammunition.name }}</p>
     </div>
+    <div class="center_column">
+        <p class="description">{{ammunition.description}} </p>
+        <ul class="center_details">
+            <li class="details" >Fabricant:{{ammunition.company}}</li>
+            <li class="details">Calibre:{{ammunition.caliber}}</li>
+        </ul>
+    </div>
+    <div class="right_column"></div>
+</div>
+<div class="buttons">
+    <button (click)="goToAmmunitionsList()">Retour</button>
+    <button (click)="goToEditAmmunition(ammunition)">Éditer</button>
+    <button (click)="deleteAmmunition(ammunition)">Supprimer</button>
 </div>
 <h4 *ngIf='!ammunition' class="center"> Aucune munition trouvée</h4>

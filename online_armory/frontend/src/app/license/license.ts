@@ -1,18 +1,19 @@
 import { LicenseType } from "../license-type/license-type";
-import { Member } from "../member/member";
+import { User } from "../user/user";
+
 
 export class License {
     id: number;
-    member: Member;
+    user: User;
     dateOfValidity: Date;
     licenseType: LicenseType;
 
     constructor(
-        member: Member = null,
+        user: User = null,
         dateOfValidity: Date = null,
         licenseType: LicenseType = null,
     ){
-        this.member = member;
+        this.user = user;
         this.dateOfValidity = dateOfValidity;
         this.licenseType = licenseType;
     }

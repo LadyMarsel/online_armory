@@ -1,20 +1,37 @@
-<h1 class="center"> Liste de munitions</h1>>
+<h1 class="title"> Liste de munitions</h1>
 
 <div class="container">
-    <div class="row">
-        <div *ngFor="let ammunition of ammunitionsList" class="col m4 s6">
-            <div class="item-container" (click)="goToAmmunition(ammunition)">
-                <div class="round-frame">
-                    <img class="item-image" [src]="ammunition.img" />
-                </div>
-                <p class="item-name">{{ ammunition.name }}</p>
-            </div>
+    <i class="fa-solid fa-circle-chevron-left navigate_button" (click)="goToLeft()"></i>
+
+    <!-- Bulle 1 -->
+    <div class="item-container" (click)="goToAmmunition(ammunitionsList[startIndex])">
+        <div class="round-frame">
+            <img class="item-image" [src]="" />
         </div>
+        <p class="item-name">{{ammunitionsList[startIndex].name}}</p>
     </div>
+
+    <!-- Bulle 2 -->
+    <div  class="item-container" (click)="goToAmmunition(ammunitionsList[startIndex+1])">
+        <div class="round-frame">
+            <img class="item-image" [src]="" />
+        </div>
+        <p class="item-name">{{ammunitionsList[(startIndex+1)%ammunitionsList.length].name}}</p>
+    </div>
+
+    <!-- Bulle 3 -->
+    <div  class="item-container" (click)="goToAmmunition(ammunitionsList[startIndex+2])">
+        <div class="round-frame">
+            <img class="item-image" [src]="" />
+        </div>
+        <p class="item-name">{{ammunitionsList[(startIndex+2)%ammunitionsList.length].name}}</p>
+    </div>
+    <i class="fa-solid fa-circle-chevron-right navigate_button" (click)="goToRight()"></i>
+
 </div>
-<a 
-    class="btn-floating btn-large waves-effect waves-light orange z-depth-3" 
-    style="position: fixed; bottom: 30px; right: 30px;"
+
+<button class="add_button"
     (click)="goToAddAmmunition()"> 
-Ajouter 
-</a> 
+    Ajouter 
+</button> 
+

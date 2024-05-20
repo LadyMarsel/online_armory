@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from '../company';
 import { Router } from '@angular/router';
+
 import { CrudService } from '../../services/crud.service';
 import { CommonModule } from '@angular/common';
-//import { MatCarouselModule} from '@ng-mat-carousel'
 
 @Component({
   selector: 'app-list-company',
@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
   ],
   templateUrl: './list-company.component.html',
   styleUrl: './list-company.component.css'
+  
 })
 
 export class ListCompanyComponent implements OnInit {
@@ -37,27 +38,15 @@ export class ListCompanyComponent implements OnInit {
   }
 
   goToLeft(){
-    if(this.startIndex > 0){
-      this.startIndex--;
-    }else {
-      this.startIndex = this.companiesList.length;
+    if(this.startIndex == 0){
+      this.startIndex=this.companiesList.length-1;
+    }else{
+    this.startIndex--;
     }
   }
 
   goToRight(){
-    if(this.startIndex < this.companiesList.length){
-      this.startIndex++;
-    }else{
-      this.startIndex = 0;
-    }
-  }
-
-  comparaison(nb1: number, nb2: number){
-    if(nb1 < nb2){
-      return true;
-    }else{
-      return false;
-    }
+    this.startIndex = (this.startIndex+1)%this.companiesList.length;
   }
 
 }
