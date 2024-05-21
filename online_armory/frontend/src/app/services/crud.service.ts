@@ -30,9 +30,9 @@ export class CrudService {
     return of(errorValue);
   }
 
-  public getCountriesList(): Observable<Contry[]>{
+  /*public getCountriesList(): Observable<Country[]>{
     return this.http.get<Country[]>();
-  }
+  }*/
 
 /*
 ----------------------------------- GUNS -----------------------------------
@@ -181,6 +181,8 @@ deleteCompanyById(companyId: number): Observable<null> {
   );
 }
 
+
+
 /*
 ----------------------------------- LICENSE -----------------------------------
 */
@@ -277,11 +279,6 @@ deleteProfessionnalById(professionnalId: number): Observable<null> {
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, undefined))
   );
-}
-
-getProfessionnalTypesList(): Observable<ProfessionnalType[]>{
-  return this.http.get<ProfessionnalType[]>(this.baseUrl+'/professionnal/');
-
 }
 
 /*

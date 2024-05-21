@@ -1,6 +1,6 @@
 package com.project.configuration;
 
-import org.springframework.beans.factory.annotation.Autowired;
+/*import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,12 +15,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-import com.project.services.WSUserService;
+import com.project.services.WSUserService;*/
 
-@Configuration
-@EnableWebSecurity
+/*@Configuration
+@EnableWebSecurity*/
 public class SrpingSecurityConfig {
-
+/* 
     @Autowired
     private WSUserService WSUserService;
 
@@ -56,5 +56,5 @@ public class SrpingSecurityConfig {
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.userDetailsService(WSUserService).passwordEncoder(bCryptPasswordEncoder);
         return authenticationManagerBuilder.build();
-    }
+    }*/
 }

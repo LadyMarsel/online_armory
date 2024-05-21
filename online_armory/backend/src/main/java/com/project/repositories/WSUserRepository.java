@@ -7,6 +7,6 @@ import com.project.models.WSUser;
 
 @Repository
 public interface WSUserRepository extends CrudRepository<WSUser, Long> {
-    public WSUser findByUsername(String username);
+    /*public WSUser findByUsername(String username);*/
 
 }

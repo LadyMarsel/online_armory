@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LoginController {
-
+/* 
     @GetMapping("/user")
 	public String getUser() {
 		return "Welcome, User";
@@ -14,6 +14,6 @@ public class LoginController {
 	@GetMapping("/admin")
 	public String getAdmin() {
 		return "Welcome, Admin";
-	}
+	}*/
 
 }
