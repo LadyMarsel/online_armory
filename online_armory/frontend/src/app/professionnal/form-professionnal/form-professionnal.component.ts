@@ -21,8 +21,8 @@ import { Country } from '../../country';
 export class FormProfessionnalComponent implements OnInit{
   @Input() professionnal: Professionnal;
   isAddForm: boolean;
-  professionnalTypes: ProfessionnalType[];
-  countries: Country[];
+  professionnalTypes: ProfessionnalType[] = [];
+  countries: Country[] = [];
 
   constructor(
     private crudService: CrudService, 
@@ -30,6 +30,8 @@ export class FormProfessionnalComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
+    this.crudService.getProfessionnalTypesList().subscribe(data => this.professionnalTypes = data);
+    this.crudService.getCountriesList().subscribe(data => this.countries = data);
     this.isAddForm = this.router.url.includes('add');
   }
 

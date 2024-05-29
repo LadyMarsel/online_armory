@@ -15,7 +15,7 @@
                 required    
                 [(ngModel)]="professionnal.country" name="country"
                 #country="ngModel" >
-                <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                <option *ngFor="let country of countries" [NgValue]="country">{{ country.name }}</option>
             </select>
         </div>
 
@@ -83,7 +83,7 @@
                 required    
                 [(ngModel)]="professionnal.professionnalType" name="professionnalType"
                 #professionnalType="ngModel" >
-                <option *ngFor="let professionnalType of professionnalTypes" [value]="professionnalType">{{ professionnalType }}</option>
+                <option *ngFor="let professionnalType of professionnalTypes" [NgValue]="professionnalType">{{ professionnalType }}</option>
             </select>
         </div>
         

@@ -24,18 +24,21 @@ public class Gun {
     private Company company;//Fabricant
 
     //Un gun ne peut avoir qu'un seul type, mais un type peut être décliné en plusieurs modèles
-    @OneToOne
+    @ManyToOne
     private GunType gunType;//Revolver, Pistolet, Carabine ou Fusil
 
     //Un gun ne peut avoir qu'un seul mode de réarmement, mais un mode de réarmement peut être décliné en plusieurs modèles
     @ManyToOne
     private RearmingMode rearmingMode;//Mode de réarmement de l'arme
 
+    @ManyToOne
+    private InternalMechanic internalMechanic;
+
     //Un gun ne peut avoir qu'un seul calibre, mais un calibre peut être utilisé par plusieurs modèles
     @ManyToOne
     private Caliber caliber;//Calibre
     private String name;
-    private String country;
+
     private String year;
     private String description;
     private String img;
@@ -44,13 +47,12 @@ public class Gun {
     private int barelSize;//Taille du canon
     private int totalSize;//Taille totale
 
-    public Gun(Company company, GunType gunType, RearmingMode rearmingMode, Caliber caliber, String name, String country, String year, String description, String img, boolean isForbidden, boolean isFree, int barelSize, int totalSize){
+    public Gun(Company company, GunType gunType, RearmingMode rearmingMode, Caliber caliber, String name, String year, String description, String img, boolean isForbidden, boolean isFree, int barelSize, int totalSize){
         this.company = company;
         this.gunType = gunType;
         this.rearmingMode = rearmingMode;
         this.caliber = caliber;
         this.name = name;
-        this.country = country;
         this.year = year;
         this.description = description;
         this.img = img;

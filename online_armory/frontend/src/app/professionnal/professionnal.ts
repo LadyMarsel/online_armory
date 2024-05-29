@@ -1,9 +1,10 @@
+import { Country } from "../country";
 import { ProfessionnalType } from "../professionnal-type/professionnal-type";
 
 export class Professionnal {
     id: number;
     name: string;
-    country: string;
+    country: Country;
     year: string;
     description: string;
     adress: string;
@@ -15,7 +16,7 @@ export class Professionnal {
 
     constructor(
         name: string = "",
-        country: string = "",
+        country: Country = null,
         year: string = "",
         description: string = "",
         adress: string = "",

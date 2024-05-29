@@ -1,17 +1,18 @@
 package com.project.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import java.util.List;
+
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class Country {
 
     @Id
@@ -19,6 +20,13 @@ public class Country {
     private Long id;
 
     private String name;
+
+    //Un pays peut avoir plusieurs fabricants
+    @OneToMany
+    private List<Company> companies;
+
+    @OneToMany
+    private List<Professionnal> professionnal;
 
     public Country(String name){
         this.name = name;

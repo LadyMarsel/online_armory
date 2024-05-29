@@ -6,9 +6,15 @@
     <div class="center_column">
         <p class="description">{{company.description}} </p>
         <ul class="center_details">
-            <li class="details" >Pays:{{company.country}}</li>
+            <li class="details" >Pays:{{company.country.name}}</li>
             <li class="details">Année:{{company.year}}</li>
         </ul>
     </div>
     <div class="right_column"></div>
 </div>
+<div class="buttons">
+    <button (click)="goToCompaniesList()">Retour</button>
+    <button (click)="goToEditCompany(company)">Éditer</button>
+    <button (click)="deleteCompany(company)">Supprimer</button>
+</div>
+<h4 *ngIf='!company' class="center"> Aucun fabricant trouvé</h4>

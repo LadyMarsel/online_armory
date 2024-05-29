@@ -33,6 +33,20 @@ INSERT INTO `rearming_mode` VALUES
     (4,'xx','Safe Action')
     ;
 
+INSERT INTO `country` VALUES 
+    (0, 'Belgique'),
+    (1, 'France'),
+    (2, 'Autriche'),
+    (3, 'Allemagne'),
+    (4, 'Angleterre'),
+    (5, 'USA'),
+    (6, 'Russie'),
+    (7, 'Chine'),
+    (8, 'Canada'),
+    (9, 'Espagne'),
+    (10, 'Mexique')
+    ;
+
 ---------- ITEM MODIFIABLES ----------
 
 

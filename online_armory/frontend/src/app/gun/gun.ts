@@ -12,7 +12,6 @@ export class Gun {
     rearmingMode: RearmingMode;
     internalMechanic: InternalMechanic;
     name: string;
-    country: string;
     year: number;
     description: string;
     img: string;
@@ -28,7 +27,6 @@ export class Gun {
         rearmingMode: RearmingMode = null,
         internalMechanic: InternalMechanic = null,
         name: string = "",
-        country: string = "",
         year: number = 0,
         description: string = "",
         img: string = "",
@@ -43,7 +41,6 @@ export class Gun {
         this.rearmingMode = rearmingMode;
         this.internalMechanic = internalMechanic;
         this.name = name;
-        this.country = country;
         this.year = year;
         this.description = description;
         this.img = img;

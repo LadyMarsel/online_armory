@@ -15,7 +15,7 @@
                 required    
                 [(ngModel)]="gun.company" name="company"
                 #company="ngModel" >
-                <option *ngFor="let company of companies" [value]="company.id">{{ company.name }}</option>
+                <option *ngFor="let company of companies" [ngValue]="company">{{ company.name }}</option>
             </select>
         </div>
 
@@ -25,7 +25,7 @@
                 required    
                 [(ngModel)]="gun.gunType" name="gunType"
                 #gunType="ngModel" >
-                <option *ngFor="let gunType of gunTypes" [value]="gunType">{{ gunType }}</option>
+                <option *ngFor="let gunType of gunTypes" [ngValue]="gunType">{{ gunType.name }}</option>
             </select>
         </div>
 
@@ -35,7 +35,7 @@
                 required    
                 [(ngModel)]="gun.caliber" name="caliber"
                 #caliber="ngModel" >
-                <option *ngFor="let caliber of calibers" [value]="country">{{ caliber }}</option>
+                <option *ngFor="let caliber of calibers" [ngValue]="caliber">{{ caliber.metric }} mm / {{caliber.inch}} inch</option>
             </select>
         </div>
 
@@ -45,7 +45,7 @@
                 required    
                 [(ngModel)]="gun.rearmingMode" name="rearmingMode"
                 #rearmingMode="ngModel" >
-                <option *ngFor="let rearmingMode of rearmingModes" [value]="rearmingMode">{{ rearmingMode }}</option>
+                <option *ngFor="let rearmingMode of rearmingModes" [ngValue]="rearmingMode">{{ rearmingMode.name }}</option>
             </select>
         </div>
 
@@ -55,17 +55,7 @@
                 required    
                 [(ngModel)]="gun.internalMechanic" name="internalMechanic"
                 #internalMechanic="ngModel" >
-                <option *ngFor="let internalMechanic of internalMechanics" [value]="internalMechanic">{{ internalMechanic }}</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="country">Pays:</label>
-            <select class="form-control" id="country"
-                required    
-                [(ngModel)]="gun.country" name="country"
-                #country="ngModel" >
-                <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                <option *ngFor="let internalMechanic of internalMechanics" [ngValue]="internalMechanic">{{ internalMechanic.name }}</option>
             </select>
         </div>
 
@@ -113,18 +103,16 @@
 
         <div class="form-group">
             <label for="isForbidden">Est prohibé ?</label>
-            <input type="checkbox" class="form-control" id="isForbidden" 
-                required    
+            <input type="checkbox" class="form-control" id="isForbidden"   
                 [(ngModel)]="gun.isForbidden" name="isForbidden"
                 #isForbidden="ngModel">
         </div>
 
         <div class="form-group">
             <label for="isFree">Est en vente libre ?</label>
-            <input type="checkbox" class="form-control" id="isFree" 
-                required    
+            <input type="checkbox" class="form-control" id="isFree"   
                 [(ngModel)]="gun.isFree" name="isFree"
-                #isFree="ngModel">>
+                #isFree="ngModel">
         </div>
         
         <button type="submit" class="btn btn-primary" 

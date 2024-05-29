@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { Ammunition } from '../ammunition';
 import { CrudService } from '../../services/crud.service';
 import { Router } from '@angular/router';
+import { Company } from '../../company/company';
+import { Caliber } from '../../caliber/caliber';
 
 @Component({
   selector: 'app-form-ammunition',
@@ -19,6 +21,8 @@ import { Router } from '@angular/router';
 export class FormAmmunitionComponent {
   @Input() ammunition: Ammunition;
   isAddForm: boolean;
+  companies: Company[] = [];
+  calibers: Caliber[] = [];
 
   constructor(
     private crudService: CrudService,
@@ -26,6 +30,8 @@ export class FormAmmunitionComponent {
   ){}
 
   ngOnInit(): void {
+    this.crudService.getCompaniesList().subscribe(data => this.companies = data);
+    this.crudService.getCalibersList().subscribe(data => this.calibers = data);
     this.isAddForm = this.router.url.includes('add');
   }
 

@@ -10,6 +10,7 @@ import com.project.models.RearmingMode;
 import com.project.models.Gun;
 import com.project.models.Caliber;
 import com.project.models.GunType;
+import com.project.models.InternalMechanic;
 import com.project.services.GunService;
 
 @CrossOrigin
@@ -71,6 +72,11 @@ public class GunController {
                 currentGun.setRearmingMode(rearmingMode);
             }
 
+            InternalMechanic internalMechanic = gun.getInternalMechanic();
+            if(internalMechanic != null){
+                currentGun.setInternalMechanic(internalMechanic);
+            }
+
             // ! Caliber doit être existant !
             Caliber caliber = gun.getCaliber();
             if(caliber != null){
@@ -80,11 +86,6 @@ public class GunController {
             String name = gun.getName();
             if(name != null){
                 currentGun.setName(name);
-            }
-
-            String country = gun.getCountry();
-            if(country != null){
-                currentGun.setCountry(country);
             }
 
             String year = gun.getYear();

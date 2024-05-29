@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.project.models.Country;
 import com.project.models.Professionnal;
 import com.project.models.ProfessionnalType;
 import com.project.services.ProfessionnalService;
@@ -55,7 +56,7 @@ public class ProfessionnalController {
                 currentProfessionnal.setName(name);
             }
 
-            String country = professionnal.getCountry();
+            Country country = professionnal.getCountry();
             if(country != null){
                 currentProfessionnal.setCountry(country);
             }

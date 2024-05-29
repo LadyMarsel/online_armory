@@ -22,7 +22,7 @@
   
   /* Current/active navbar link */
   .active {
-    background-color: #04AA6D;
+    background-color: rgb(247, 162, 51);
   }
   
   /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
@@ -61,5 +61,5 @@
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: rgb(247, 162, 51);
   }

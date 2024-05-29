@@ -15,7 +15,7 @@
                 required    
                 [(ngModel)]="company.country" name="country"
                 #country="ngModel" >
-                <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                <option *ngFor="let country of countries" [ngValue]="country">{{ country.name }}</option>
             </select>
         </div>
 

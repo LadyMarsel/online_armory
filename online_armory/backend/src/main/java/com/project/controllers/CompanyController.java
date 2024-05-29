@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.project.models.Company;
+import com.project.models.Country;
 import com.project.services.CompanyService;
 
 
@@ -60,7 +61,7 @@ public class CompanyController {
                 currentCompany.setYear(year);
             }
             
-            String country = company.getCountry();
+            Country country = company.getCountry();
             if(country != null){
                 currentCompany.setCountry(country);
             }

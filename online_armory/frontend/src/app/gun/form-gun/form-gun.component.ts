@@ -38,9 +38,13 @@ export class FormGunComponent implements OnInit{
   ){}
 
   ngOnInit() {
-    this.crudService.getCompaniesList().subscribe(data => this.companies = data);/*
-    this.countries = this.crudService.getCountriesList()
-    this.isAddForm = this.router.url.includes('add');*/
+    this.crudService.getCompaniesList().subscribe(data => this.companies = data);
+    this.crudService.getGunTypesList().subscribe(data => this.gunTypes = data);
+    this.crudService.getCalibersList().subscribe(data => this.calibers = data);
+    this.crudService.getRearmingModesList().subscribe(data => this.rearmingModes = data);
+    this.crudService.getInternalMechanicsList().subscribe(data => this.internalMechanics = data);
+    this.crudService.getCountriesList().subscribe(data => this.countries = data);
+    this.isAddForm = this.router.url.includes('add');
   }
 
   /*hasCompany(company: string): boolean {

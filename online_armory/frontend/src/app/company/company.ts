@@ -1,15 +1,17 @@
+import { Country } from "../country";
+
 export class Company {
     id: number;
     name: string;
     year: number;
-    country: string;
+    country: Country;
     description: string;
     logo: string;
 
     constructor(
         name: string = "",
         year: number = 0,
-        country: string = "",
+        country: Country = null,
         description: string = "",
         logo: string = "",
     ){

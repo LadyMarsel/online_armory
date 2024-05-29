@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import com.project.models.Country;
 import com.project.services.CountryService;
 
+@CrossOrigin
+@RestController
 public class CountryController {
 
     

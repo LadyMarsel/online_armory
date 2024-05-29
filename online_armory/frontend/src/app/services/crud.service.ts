@@ -8,6 +8,10 @@ import { License } from '../license/license';
 import { Professionnal } from '../professionnal/professionnal';
 import { Caliber } from '../caliber/caliber';
 import { ProfessionnalType } from '../professionnal-type/professionnal-type';
+import { Country } from '../country';
+import { RearmingMode } from '../rearming-mode/rearming-mode';
+import { InternalMechanic } from '../internal-mechanic/internal-mechanic';
+import { GunType } from '../gyn-type/gun-type';
 
 @Injectable({providedIn: 'root'})
 export class CrudService {
@@ -331,7 +335,113 @@ deleteCaliberById(caliberId: number): Observable<null> {
 }
 
 /*
------------------------------------ XX -----------------------------------
+----------------------------------- COUNTRY -----------------------------------
 */
+
+/* Read - Get all */
+  
+getCountriesList(): Observable<Country[]>{
+  return this.http.get<Country[]>(this.baseUrl+'/countries').pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, []))
+  );
+}
+
+/* Read - Get one if it exist */
+
+getCountryById(countryId: number):Observable<Country|undefined>{
+  return this.http.get<Country>(this.baseUrl+`/country/${countryId}`).pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, undefined))
+  );
+}
+
+/*
+----------------------------------- REARMING MODE -----------------------------------
+*/
+
+/* Read - Get all */
+  
+getRearmingModesList(): Observable<RearmingMode[]>{
+  return this.http.get<RearmingMode[]>(this.baseUrl+'/rearmingModes').pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, []))
+  );
+}
+
+/* Read - Get one if it exist */
+
+getRearmingModeById(rearmingModeId: number):Observable<RearmingMode|undefined>{
+  return this.http.get<RearmingMode>(this.baseUrl+`/rearmingMode/${rearmingModeId}`).pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, undefined))
+  );
+}
+
+/*
+----------------------------------- INTERNAL MECHANIC -----------------------------------
+*/
+
+/* Read - Get all */
+  
+getInternalMechanicsList(): Observable<InternalMechanic[]>{
+  return this.http.get<InternalMechanic[]>(this.baseUrl+'/internalMechanics').pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, []))
+  );
+}
+
+/* Read - Get one if it exist */
+
+getInternalMechanicById(internalMechanicId: number):Observable<InternalMechanic|undefined>{
+  return this.http.get<InternalMechanic>(this.baseUrl+`/internalMechanic/${internalMechanicId}`).pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, undefined))
+  );
+}
+
+/*
+----------------------------------- GUN TYPE -----------------------------------
+*/
+
+/* Read - Get all */
+  
+getGunTypesList(): Observable<GunType[]>{
+  return this.http.get<GunType[]>(this.baseUrl+'/gunTypes').pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, []))
+  );
+}
+
+/* Read - Get one if it exist */
+
+getGunTypeById(gunTypeId: number):Observable<GunType|undefined>{
+  return this.http.get<GunType>(this.baseUrl+`/gunType/${gunTypeId}`).pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, undefined))
+  );
+}
+
+/*
+----------------------------------- PROFESSIONAL TYPE -----------------------------------
+*/
+
+/* Read - Get all */
+  
+getProfessionnalTypesList(): Observable<ProfessionnalType[]>{
+  return this.http.get<ProfessionnalType[]>(this.baseUrl+'/professionnalTypes').pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, []))
+  );
+}
+
+/* Read - Get one if it exist */
+
+getProfessionnalTypeById(professionnalTypeId: number):Observable<ProfessionnalType|undefined>{
+  return this.http.get<ProfessionnalType>(this.baseUrl+`/professionnalType/${professionnalTypeId}`).pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, undefined))
+  );
+}
   
 }

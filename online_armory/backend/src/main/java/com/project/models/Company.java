@@ -9,11 +9,13 @@ import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class Company {
 
     @Id
@@ -21,7 +23,11 @@ public class Company {
     private Long id;
     private String name;
     private String year;
-    private String country; 
+
+    //Un fab ricant à un seul pays
+    @ManyToOne
+    private Country country; 
+
     private String description;
     private String logo;
 
@@ -31,11 +37,12 @@ public class Company {
     @OneToMany
     private List<Ammunition> ammunitions;
     
-    public Company(String name, String year, String country, String description, String logo){
+    public Company(String name, String year, Country country, String description, String logo){
         this.name = name;
         this.year = year;
         this.country = country;
         this.description = description;
         this.logo = logo;
     }
+
 }

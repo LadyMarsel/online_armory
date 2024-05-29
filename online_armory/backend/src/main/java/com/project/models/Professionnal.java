@@ -18,7 +18,9 @@ public class Professionnal {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String name;
-    private String country;
+
+    @ManyToOne
+    private Country country;
     private String year;
     private String description;
     private String adress;
@@ -27,10 +29,10 @@ public class Professionnal {
     private String webSite;
     private String img;
 
-    @OneToOne
+    @ManyToOne
     private ProfessionnalType professionnalType;
 
-    public Professionnal(String name, String country, String year,String description, String adress, String email, int phone, String webSite, ProfessionnalType professionnalType, String img){
+    public Professionnal(String name, Country country, String year,String description, String adress, String email, int phone, String webSite, ProfessionnalType professionnalType, String img){
         this.name = name;
         this.country = country;
         this.year = year;
