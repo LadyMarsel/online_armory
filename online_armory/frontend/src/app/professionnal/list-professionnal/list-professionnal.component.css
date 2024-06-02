@@ -1,0 +1,24 @@
+.professionnal_card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:15px;
+    width:800px;
+    min-height: 300px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: white ;
+    box-shadow: 4px 4px 8px rgb(0,0,0,0.2);
+    border: 3px solid rgb(135, 135, 134);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+.fiche {
+display: flex;
+height: 150px;
+background-color: #FFBD59;
+border-radius: 25px;
+
+}

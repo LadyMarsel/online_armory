@@ -34,9 +34,6 @@ export class CrudService {
     return of(errorValue);
   }
 
-  /*public getCountriesList(): Observable<Country[]>{
-    return this.http.get<Country[]>();
-  }*/
 
 /*
 ----------------------------------- GUNS -----------------------------------
@@ -72,7 +69,7 @@ export class CrudService {
   /* Update - Update an existing one */
 
   updateGun(gun: Gun): Observable<Gun|undefined> {
-    return this.http.put(this.baseUrl+'/gun', gun, this.httpOptions).pipe(
+    return this.http.put(this.baseUrl+'/gun/' + gun.id, gun, this.httpOptions).pipe(
       tap((response) => this.log(response)),
       catchError((error) => this.handleError(error, null))
     );
@@ -81,7 +78,7 @@ export class CrudService {
   /* Delete - Delete one */
 
   deleteGunById(gunId: number): Observable<null> {
-    return this.http.delete(this.baseUrl+'/gun/${gunId}').pipe(
+    return this.http.delete(this.baseUrl+'/gun/'+ gunId).pipe(
       tap((response) => this.log(response)),
       catchError((error) => this.handleError(error, undefined))
     );
@@ -121,7 +118,7 @@ addAmmunition(ammunition: Ammunition): Observable<Ammunition> {
 /* Update - Update an existing one */
 
 updateAmmunition(ammunition: Ammunition): Observable<Ammunition|undefined> {
-  return this.http.put(this.baseUrl+'/ammunition', ammunition, this.httpOptions).pipe(
+  return this.http.put(this.baseUrl+'/ammunition/' + ammunition.id, ammunition, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -130,7 +127,7 @@ updateAmmunition(ammunition: Ammunition): Observable<Ammunition|undefined> {
 /* Delete - Delete one */
 
 deleteAmmunitionById(ammunitionId: number): Observable<null> {
-  return this.http.delete(this.baseUrl+'/ammunition/${ammunitionId}').pipe(
+  return this.http.delete(this.baseUrl+'/ammunition/' + ammunitionId).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, undefined))
   );
@@ -169,8 +166,8 @@ addCompany(company: Company): Observable<Company> {
 
 /* Update - Update an existing one */
 
-updateCompany(company: Company): Observable<Company|undefined> {
-  return this.http.put(this.baseUrl+'/company', company, this.httpOptions).pipe(
+updateCompany(company: Company): Observable<Company> {
+  return this.http.put(this.baseUrl+'/company/' + company.id, company, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -179,7 +176,7 @@ updateCompany(company: Company): Observable<Company|undefined> {
 /* Delete - Delete one */
 
 deleteCompanyById(companyId: number): Observable<null> {
-  return this.http.delete(this.baseUrl+'/company/${companyId}').pipe(
+  return this.http.delete(this.baseUrl+'/company/' + companyId).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, undefined))
   );
@@ -221,7 +218,7 @@ addLicense(license: License): Observable<License> {
 /* Update - Update an existing one */
 
 updateLicense(license: License): Observable<License|undefined> {
-  return this.http.put(this.baseUrl+'/license', license, this.httpOptions).pipe(
+  return this.http.put(this.baseUrl+'/license/' + license.id, license, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -230,7 +227,7 @@ updateLicense(license: License): Observable<License|undefined> {
 /* Delete - Delete one */
 
 deleteLicenseById(licenseId: number): Observable<null> {
-  return this.http.delete(this.baseUrl+'/license/${licenseId}').pipe(
+  return this.http.delete(this.baseUrl+'/license/' + licenseId).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, undefined))
   );
@@ -270,7 +267,7 @@ addProfessionnal(professionnal: Professionnal): Observable<Professionnal> {
 /* Update - Update an existing one */
 
 updateProfessionnal(professionnal: Professionnal): Observable<Professionnal|undefined> {
-  return this.http.put(this.baseUrl+'/professionnal', professionnal, this.httpOptions).pipe(
+  return this.http.put(this.baseUrl+'/professionnal/' + professionnal.id, professionnal, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -279,7 +276,7 @@ updateProfessionnal(professionnal: Professionnal): Observable<Professionnal|unde
 /* Delete - Delete one */
 
 deleteProfessionnalById(professionnalId: number): Observable<null> {
-  return this.http.delete(this.baseUrl+'/professionnal/${professionnalId}').pipe(
+  return this.http.delete(this.baseUrl+'/professionnal/' + professionnalId).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, undefined))
   );
@@ -319,7 +316,7 @@ addCaliber(caliber: Caliber): Observable<Caliber> {
 /* Update - Update an existing one */
 
 updateCaliber(caliber: Caliber): Observable<Caliber|undefined> {
-  return this.http.put(this.baseUrl+'/caliber', caliber, this.httpOptions).pipe(
+  return this.http.put(this.baseUrl+'/caliber/' + caliber.id, caliber, this.httpOptions).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, null))
   );
@@ -328,7 +325,7 @@ updateCaliber(caliber: Caliber): Observable<Caliber|undefined> {
 /* Delete - Delete one */
 
 deleteCaliberById(caliberId: number): Observable<null> {
-  return this.http.delete(this.baseUrl+'/caliber/${caliberId}').pipe(
+  return this.http.delete(this.baseUrl+'/caliber/' + caliberId).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, undefined))
   );

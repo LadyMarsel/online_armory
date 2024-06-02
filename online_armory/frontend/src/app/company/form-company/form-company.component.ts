@@ -34,9 +34,7 @@ export class FormCompanyComponent implements OnInit{
   }
 
   onSubmit(){
-    console.log('onSubmit()');
     if(this.isAddForm){
-      console.log("on submit: ",JSON.stringify(this.company.country));
       this.crudService.addCompany(this.company).subscribe((company: Company) => this.router.navigate(['/company', company.id]));
     }else{
       this.crudService.updateCompany(this.company).subscribe(() => this.router.navigate(['/company', this.company.id]));

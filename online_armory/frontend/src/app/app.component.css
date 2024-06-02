@@ -1,8 +1,14 @@
  /* Style the navigation bar */
  .navbar {
+  display: flex;
     width: 100%;
     background-color: #555;
     overflow: auto;
+  }
+
+  .dropdown{
+    display: flex;
+    align-items: stretch;
   }
   
   /* Navbar links */
@@ -52,12 +58,15 @@
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #f1f1f1}
+  .dropdown-content a:hover {
+    background-color: #f1f1f1}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
-    display: block;
-  }
+    display: flex;
+    flex-direction: column;
+    margin-top:42px;
+    }
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {

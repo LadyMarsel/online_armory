@@ -14,7 +14,7 @@ import { CrudService } from '../../services/crud.service';
   styleUrl: './list-professionnal.component.css'
 })
 export class ListProfessionnalComponent {
-  professionnalsList: Professionnal[];
+  professionnalsList: Professionnal[] = [];
 
   constructor(
     private router: Router,
@@ -22,7 +22,7 @@ export class ListProfessionnalComponent {
   ){}
 
   ngOnInit(){
-    this.crudService.getProfessionnalsList().subscribe(data => this.professionnalsList = data);
+    this.crudService.getProfessionnalsList().subscribe(data => {this.professionnalsList = data;console.log(JSON.stringify(data))});
     }
 
   goToAddProfessionnal() {
