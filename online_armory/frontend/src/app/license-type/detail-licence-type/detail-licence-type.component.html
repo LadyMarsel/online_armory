@@ -1,0 +1,13 @@
+<div class="licenseType_card">
+    <div class="left_column">
+        <p class="licenseType_label">{{ licenseType.name }}</p>
+    </div>
+    <div class="center_column">
+        <p class="description">{{licenseType.description}} </p>
+    </div>
+    <div class="right_column"></div>
+</div>
+<div class="buttons">
+    <button (click)="goTolicenseTypesList()">Retour</button>
+</div>
+<h4 *ngIf='!licenseType' class="center"> Aucun licenseType trouvé</h4>

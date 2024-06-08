@@ -18,6 +18,7 @@ import { AddCaliberComponent } from './caliber/add-caliber/add-caliber.component
 import { EditProfessionnalComponent } from './professionnal/edit-professionnal/edit-professionnal.component';
 import { AddProfessionnalComponent } from './professionnal/add-professionnal/add-professionnal.component';
 import { ListProfessionnalComponent } from './professionnal/list-professionnal/list-professionnal.component';
+import { ListLicenceTypeComponent } from './license-type/list-licence-type/list-licence-type.component';
 
 export const routes: Routes = [
     /*GUN */
@@ -43,6 +44,9 @@ export const routes: Routes = [
     { path: 'edit/professionnal/:id', component: EditProfessionnalComponent},
     { path: 'professionnal/add', component: AddProfessionnalComponent},
     { path: 'professionnals', component: ListProfessionnalComponent},
+    /*LICENSE TYPE*/
+    { path: 'licenseTypes', component: ListLicenceTypeComponent},
+    { path: 'licenseType/:id', component: ListLicenceTypeComponent},
 
     { path: '', redirectTo: 'guns', pathMatch: 'full' }
 ];

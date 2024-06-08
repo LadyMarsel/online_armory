@@ -12,6 +12,7 @@ import { Country } from '../country';
 import { RearmingMode } from '../rearming-mode/rearming-mode';
 import { InternalMechanic } from '../internal-mechanic/internal-mechanic';
 import { GunType } from '../gyn-type/gun-type';
+import { LicenseType } from '../license-type/license-type';
 
 @Injectable({providedIn: 'root'})
 export class CrudService {
@@ -436,6 +437,28 @@ getProfessionnalTypesList(): Observable<ProfessionnalType[]>{
 
 getProfessionnalTypeById(professionnalTypeId: number):Observable<ProfessionnalType|undefined>{
   return this.http.get<ProfessionnalType>(this.baseUrl+`/professionnalType/${professionnalTypeId}`).pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, undefined))
+  );
+}
+
+/*
+----------------------------------- LICENSE TYPE -----------------------------------
+*/
+
+/* Read - Get all */
+  
+getLicenseTypesList(): Observable<LicenseType[]>{
+  return this.http.get<LicenseType[]>(this.baseUrl+'/licenseTypes').pipe(
+    tap((response) => this.log(response)),
+    catchError((error) => this.handleError(error, []))
+  );
+}
+
+/* Read - Get one if it exist */
+
+getLicenseTypeById(licenseTypeId: number):Observable<LicenseType|undefined>{
+  return this.http.get<LicenseType>(this.baseUrl+`/licenseType/${licenseTypeId}`).pipe(
     tap((response) => this.log(response)),
     catchError((error) => this.handleError(error, undefined))
   );

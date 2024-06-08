@@ -1,30 +1,20 @@
-<div class="professionnal_card">
-        <div class="fiche">
-
+<div class="containrer">
+        <div *ngFor="let professionnal of professionnalsList" class="professionnal_card">
+                <div class="fiche">
+                        <div calss="fiche-content">
+                                <p>{{ professionnal.name }}</p>
+                                <p>{{ professionnal.adress }}</p>
+                                <p>{{ professionnal.year }}</p>
+                        </div>
+                        <div class="fiche-button">
+                                <p (click)="goToEditProfessionnal(professionnal)">Editer</p>
+                                <p (click)="deleteProfessionnal(professionnal)">Supprimer</p>
+                        </div>
+                </div>
         </div>
-        <div class="fiche">
-
-        </div>
-        <div class="fiche">
-
-        </div>
-        <div class="fiche">
-
-        </div>
-        <div class="fiche">
-
-        </div>
-        <div class="fiche">
-
-        </div>        <div class="fiche">
-
-        </div>
-        <div class="fiche">
-
-        </div>
-        <div class="fiche">
-
-        </div>
-
 </div>
 
+<button class="add_button"
+    (click)="goToAddProfessionnal()"> 
+    Ajouter 
+</button> 
