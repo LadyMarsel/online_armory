@@ -1,4 +1,4 @@
-<div class="containrer">
+<div class="container">
     <div *ngFor="let caliber of calibersList" class="caliber_card">
             <div class="fiche">
                     <div calss="fiche-content">
@@ -6,8 +6,8 @@
                             <p>{{ caliber.inch }} inch</p>
                     </div>
                     <div class="fiche-button">
-                            <p (click)="goToEditCaliber(caliber)">Editer</p>
-                            <p (click)="deleteCaliber(caliber)">Supprimer</p>
+                            <button (click)="goToEditCaliber(caliber)">Editer</button>
+                            <button (click)="deleteCaliber(caliber)">Supprimer</button>
                     </div>
             </div>
     </div>

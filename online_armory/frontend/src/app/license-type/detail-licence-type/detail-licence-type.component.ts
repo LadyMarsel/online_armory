@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { LicenseType } from '../license-type';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CrudService } from '../../services/crud.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detail-licence-type',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './detail-licence-type.component.html',
   styleUrl: './detail-licence-type.component.css'
 })

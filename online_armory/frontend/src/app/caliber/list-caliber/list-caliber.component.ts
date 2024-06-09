@@ -32,6 +32,7 @@ export class ListCaliberComponent implements OnInit {
 
   deleteCaliber(caliber: Caliber) {
     this.crudService.deleteCaliberById(caliber.id).subscribe(() => this.goToCalibersList());
+    this.router.navigate(['/calibers']);
   }
 
   goToCalibersList(){

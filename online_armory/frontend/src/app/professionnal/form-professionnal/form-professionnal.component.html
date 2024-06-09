@@ -83,7 +83,7 @@
                 required    
                 [(ngModel)]="professionnal.professionnalType" name="professionnalType"
                 #professionnalType="ngModel" >
-                <option *ngFor="let professionnalType of professionnalTypes" [ngValue]="professionnalType">{{ professionnalType }}</option>
+                <option *ngFor="let professionnalType of professionnalTypes" [ngValue]="professionnalType">{{ professionnalType.name }}</option>
             </select>
         </div>
         

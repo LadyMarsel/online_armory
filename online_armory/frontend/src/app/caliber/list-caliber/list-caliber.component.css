@@ -1,30 +1,24 @@
-.item-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .round-frame {
-    display: flex;
-    border-radius: 50%;
-    background-color: rgb(247, 162, 51);
-    width: 200px;
-    height: 200px;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .round-frame:hover {
-    border: solid 2px rgb(131, 80, 14);
-  }
-  
-  .item-image {
-    width: 100px;
-  }
-  
-  .item-name {
-    font-size: 24px;
-    font-weight: 600;
-    color: rgb(131, 80, 14);
-  }
+.professionnal_card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:15px;
+  width:800px;
+  min-height: 300px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: white ;
+  box-shadow: 4px 4px 8px rgb(0,0,0,0.2);
+  border: 3px solid rgb(135, 135, 134);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+
+.fiche {
+display: flex;
+height: 150px;
+background-color: #FFBD59;
+border-radius: 25px;
+
+}

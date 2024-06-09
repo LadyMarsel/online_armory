@@ -47,21 +47,6 @@ export class FormGunComponent implements OnInit{
     this.isAddForm = this.router.url.includes('add');
   }
 
-  /*hasCompany(company: string): boolean {
-    return this.gun.company.includes(company);
-  }
-
-  selectCompany($event: Event, company: Company){
-    const isChecked: boolean= ($event.target as HTMLInputElement).checked;
-
-    if(isChecked){
-      this.gun.company.push(company);
-    }else{
-      const index = this.gun.company.indexOf(company);
-      this.gun.company.slice(index, 1);
-    }
-  }*/
-
   onSubmit(){
     if(this.isAddForm){
       this.crudService.addGun(this.gun).subscribe((gun: Gun) => this.router.navigate(['/gun', gun.id]));

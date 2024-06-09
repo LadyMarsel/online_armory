@@ -28,7 +28,7 @@ public class CaliberService {
 
     /* Delete - Delete one */
 
-       public void deleteCaliber(final Long id){
+    public void deleteCaliber(final Long id){
         caliberRepository.deleteById(id);
     }
 
