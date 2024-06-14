@@ -15,7 +15,7 @@
                 required    
                 [(ngModel)]="gun.company" name="company"
                 #company="ngModel" >
-                <option *ngFor="let company of companies" [ngValue]="company">{{ company.name }}</option>
+                <option *ngFor="let company of companies" [ngValue]="company" [selected]="company.id==gun.company.id" >{{ company.name }}</option>
             </select>
         </div>
 
@@ -25,7 +25,7 @@
                 required    
                 [(ngModel)]="gun.gunType" name="gunType"
                 #gunType="ngModel" >
-                <option *ngFor="let gunType of gunTypes" [ngValue]="gunType">{{ gunType.name }}</option>
+                <option *ngFor="let gunType of gunTypes" [ngValue]="gunType" [selected]="gunType.id===gun.gunType.id">{{ gunType.name }},{{gunType.id==gun.gunType.id}}</option>
             </select>
         </div>
 
@@ -102,17 +102,17 @@
         </div>
 
         <div class="form-group">
-            <label for="isForbidden">Est prohibé ?</label>
-            <input type="checkbox" class="form-control" id="isForbidden"   
-                [(ngModel)]="gun.isForbidden" name="isForbidden"
-                #isForbidden="ngModel">
+            <label for="forbidden">Est prohibé ?</label>
+            <input type="checkbox" class="form-control" id="forbidden"   
+                [(ngModel)]="gun.forbidden" name="forbidden"
+                #forbidden="ngModel">
         </div>
 
         <div class="form-group">
-            <label for="isFree">Est en vente libre ?</label>
-            <input type="checkbox" class="form-control" id="isFree"   
-                [(ngModel)]="gun.isFree" name="isFree"
-                #isFree="ngModel">
+            <label for="free">Est en vente libre ?</label>
+            <input type="checkbox" class="form-control" id="free"   
+                [(ngModel)]="gun.free" name="free"
+                #free="ngModel">
         </div>
         
         <button type="submit" class="btn btn-primary" 

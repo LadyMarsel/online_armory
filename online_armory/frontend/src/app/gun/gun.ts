@@ -15,8 +15,8 @@ export class Gun {
     year: number;
     description: string;
     img: string;
-    isForbidden: boolean;
-    isFree: boolean;
+    forbidden: boolean;
+    free: boolean;
     barelSize: number;
     totalSize: number;
 
@@ -30,8 +30,8 @@ export class Gun {
         year: number = 0,
         description: string = "",
         img: string = "",
-        isForbidden: boolean = false,
-        isFree: boolean = false,
+        forbidden: boolean = false,
+        free: boolean = false,
         barelSize: number = 0,
         totalSize: number = 0,
     ){
@@ -44,8 +44,8 @@ export class Gun {
         this.year = year;
         this.description = description;
         this.img = img;
-        this.isForbidden = isForbidden;
-        this.isFree = isFree;
+        this.forbidden = forbidden;
+        this.free = free;
         this.barelSize = barelSize;
         this.totalSize = totalSize;
     }

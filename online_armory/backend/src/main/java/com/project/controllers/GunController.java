@@ -51,6 +51,7 @@ public class GunController {
     @PutMapping("/gun/{id}")
     public Gun updateGun(@PathVariable("id") final Long id, @RequestBody Gun gun){
         Optional<Gun> g = gunService.getGun(id);
+        System.out.println(" <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         if(g.isPresent()){
             Gun currentGun = g.get();
 
@@ -113,7 +114,13 @@ public class GunController {
                 currentGun.setTotalSize(totalSize);
             }
 
+            currentGun.setForbidden(gun.isForbidden());
+
+            currentGun.setFree(gun.isFree());
+        
+
             gunService.saveGun(currentGun);
+            System.out.println(currentGun);
             return currentGun;
 
         } else {

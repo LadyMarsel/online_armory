@@ -48,6 +48,7 @@ export class FormGunComponent implements OnInit{
   }
 
   onSubmit(){
+    console.log(JSON.stringify(this.gun));
     if(this.isAddForm){
       this.crudService.addGun(this.gun).subscribe((gun: Gun) => this.router.navigate(['/gun', gun.id]));
     }else{

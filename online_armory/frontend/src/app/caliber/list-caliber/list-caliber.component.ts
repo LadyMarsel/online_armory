@@ -23,7 +23,13 @@ export class ListCaliberComponent implements OnInit {
     ){}
 
   ngOnInit(){
-  this.crudService.getCalibersList().subscribe(data => this.calibersList = data);
+    this.loadCalibers();
+  }
+
+  loadCalibers()
+  {
+    this.crudService.getCalibersList().subscribe(data => this.calibersList = data);
+
   }
 
   goToAddCaliber() {
@@ -31,8 +37,8 @@ export class ListCaliberComponent implements OnInit {
   }
 
   deleteCaliber(caliber: Caliber) {
-    this.crudService.deleteCaliberById(caliber.id).subscribe(() => this.goToCalibersList());
-    this.router.navigate(['/calibers']);
+    this.crudService.deleteCaliberById(caliber.id).subscribe(() => this.loadCalibers());
+    
   }
 
   goToCalibersList(){

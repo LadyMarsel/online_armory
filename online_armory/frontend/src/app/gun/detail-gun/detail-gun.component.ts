@@ -29,7 +29,7 @@ export class DetailGunComponent implements OnInit {
   ngOnInit() {
     const gunId: string|null = this.route.snapshot.paramMap.get('id'); //Permet d'acceder à l'url à un instant T
     if(gunId){
-      this.crudService.getGunById(+gunId).subscribe(data => this.gun = data);
+      this.crudService.getGunById(+gunId).subscribe(data => {this.gun = data; console.log(JSON.stringify(data))});
     }
   }
 

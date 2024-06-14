@@ -8,10 +8,12 @@ import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 public class Gun {
 
@@ -42,12 +44,12 @@ public class Gun {
     private String year;
     private String description;
     private String img;
-    private boolean isForbidden;//Est-ce une arme prohibée en Belgique ?
-    private boolean isFree;//Est-ce une arme en vente libre en Belgique ?
+    private boolean forbidden;//Est-ce une arme prohibée en Belgique ?
+    private boolean free;//Est-ce une arme en vente libre en Belgique ?
     private int barelSize;//Taille du canon
     private int totalSize;//Taille totale
 
-    public Gun(Company company, GunType gunType, RearmingMode rearmingMode, Caliber caliber, String name, String year, String description, String img, boolean isForbidden, boolean isFree, int barelSize, int totalSize){
+    public Gun(Company company, GunType gunType, RearmingMode rearmingMode, Caliber caliber, String name, String year, String description, String img, boolean forbidden, boolean free, int barelSize, int totalSize){
         this.company = company;
         this.gunType = gunType;
         this.rearmingMode = rearmingMode;
@@ -56,10 +58,12 @@ public class Gun {
         this.year = year;
         this.description = description;
         this.img = img;
-        this.isForbidden = isForbidden;
-        this.isFree = isFree;
+        this.forbidden = forbidden;
+        this.free = free;
         this.barelSize = barelSize;
         this.totalSize = totalSize;
     }
+
+    
     
 }
