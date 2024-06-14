@@ -23,7 +23,7 @@ export class ListCaliberComponent implements OnInit {
     ){}
 
   ngOnInit(){
-    this.loadCalibers();
+    this.loadCalibers(); 
   }
 
   loadCalibers()

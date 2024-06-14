@@ -1,5 +1,7 @@
-<div class="container">
-        <div *ngFor="let professionnal of professionnalsList" class="professionnal_card">
+<h2 class="title">Liste de professionnels</h2>
+
+<div class="professionnal_card">
+        <div *ngFor="let professionnal of professionnalsList" >
                 <div class="fiche">
                         <div calss="fiche-content">
                                 <p>{{ professionnal.name }}</p>
@@ -7,8 +9,8 @@
                                 <p>{{ professionnal.year }}</p>
                         </div>
                         <div class="fiche-button">
-                                <p (click)="goToEditProfessionnal(professionnal)">Editer</p>
-                                <p (click)="deleteProfessionnal(professionnal)">Supprimer</p>
+                                <button (click)="goToEditProfessionnal(professionnal)">Editer</button>
+                                <button (click)="deleteProfessionnal(professionnal)">Supprimer</button>
                         </div>
                 </div>
         </div>

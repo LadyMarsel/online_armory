@@ -30,6 +30,14 @@ export class FormCaliberComponent implements OnInit{
   }
 
   onSubmit(){
-    this.crudService.addCaliber(this.caliber).subscribe(() => this.router.navigate(['/calibers']));      
+    if(this.isAddForm){
+      this.crudService.addCaliber(this.caliber).subscribe(() => this.router.navigate(['/calibers']));      
+    }else{
+      this.crudService.updateCaliber(this.caliber).subscribe(() => this.router.navigate(['/calibers']));      
+    }
+  }
+ 
+  goToCalibersList(){
+    this.router.navigate(['/calibers']);
   }
 }

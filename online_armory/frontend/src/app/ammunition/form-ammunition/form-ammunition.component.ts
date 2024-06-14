@@ -42,4 +42,8 @@ export class FormAmmunitionComponent {
       this.crudService.updateAmmunition(this.ammunition).subscribe(() => this.router.navigate(['/ammunition', this.ammunition.id]));
     }
   }
+
+  goToAmmunitionsList(){
+    this.router.navigate(['/ammunitions']);
+  }
 }

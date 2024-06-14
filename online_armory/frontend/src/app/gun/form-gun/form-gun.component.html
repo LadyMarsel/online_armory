@@ -1,3 +1,5 @@
+<button (click)="goToGunsList()">Retour</button>
+
 <div class="form-container">
     <form *ngIf="gun" (ngSubmit)="onSubmit()" #gunForm="ngForm">
 
@@ -15,7 +17,7 @@
                 required    
                 [(ngModel)]="gun.company" name="company"
                 #company="ngModel" >
-                <option *ngFor="let company of companies" [ngValue]="company" [selected]="company.id==gun.company.id" >{{ company.name }}</option>
+                <option *ngFor="let company of companies" [ngValue]="company" >{{ company.name }}</option>
             </select>
         </div>
 
@@ -25,7 +27,7 @@
                 required    
                 [(ngModel)]="gun.gunType" name="gunType"
                 #gunType="ngModel" >
-                <option *ngFor="let gunType of gunTypes" [ngValue]="gunType" [selected]="gunType.id===gun.gunType.id">{{ gunType.name }},{{gunType.id==gun.gunType.id}}</option>
+                <option *ngFor="let gunType of gunTypes" [ngValue]="gunType" >{{ gunType.name }}</option>
             </select>
         </div>
 

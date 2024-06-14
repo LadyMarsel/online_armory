@@ -1,3 +1,7 @@
+.title{
+  text-align: center;
+}
+
 .container{
   display: flex;
   flex-direction: row;
@@ -38,8 +42,6 @@
 .add_button{
   position: fixed; bottom: 30px; right: 30px;
 }
-
-
 
 .navigate_button{
 font-weight: 900;

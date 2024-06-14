@@ -41,7 +41,7 @@ export class ListGunComponent implements OnInit {
     if(this.startIndex == 0){
       this.startIndex=this.gunsList.length-1;
     }else{
-    this.startIndex--;
+      this.startIndex--;
     }
   }
 

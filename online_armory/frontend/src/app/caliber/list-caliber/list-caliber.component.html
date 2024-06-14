@@ -1,11 +1,12 @@
-<div class="container">
-    <div *ngFor="let caliber of calibersList" class="caliber_card">
+<h2 class="title">Liste de calibres</h2>
+
+<div class="caliber_card">
+    <div *ngFor="let caliber of calibersList">
             <div class="fiche">
                     <div calss="fiche-content">
-                            <p>{{ caliber.metric }} metric</p>
-                            <p>{{ caliber.inch }} inch</p>
+                            <p>{{ caliber.metric }} metric, {{ caliber.inch }} inch</p>
                     </div>
-                    <div class="fiche-button">
+                    <div class="fiche_buttons">
                             <button (click)="goToEditCaliber(caliber)">Editer</button>
                             <button (click)="deleteCaliber(caliber)">Supprimer</button>
                     </div>

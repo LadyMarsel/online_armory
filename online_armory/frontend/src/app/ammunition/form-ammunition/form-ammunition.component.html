@@ -1,3 +1,5 @@
+<button (click)="goToAmmunitionsList()">Retour</button>
+
 <div class="form-container">
     <form *ngIf="ammunition" (ngSubmit)="onSubmit()" #ammunitionForm="ngForm">
 
@@ -15,7 +17,7 @@
                 required    
                 [(ngModel)]="ammunition.company" name="company"
                 #company="ngModel" >
-                <option *ngFor="let company of companies" [ngValue]="company">{{ company.name }}</option>
+                <option *ngFor="let company of companies" [ngValue]="company" >{{ company.name }}</option>
             </select>
         </div>
 
@@ -25,7 +27,7 @@
                 required    
                 [(ngModel)]="ammunition.caliber" name="caliber"
                 #caliber="ngModel" >
-                <option *ngFor="let caliber of calibers" [ngValue]="caliber">{{ caliber.metric }} mm / {{caliber.inch}} inch</option>
+                <option *ngFor="let caliber of calibers" [ngValue]="caliber" >{{ caliber.metric }} mm / {{caliber.inch}} inch</option>
             </select>
         </div>
 

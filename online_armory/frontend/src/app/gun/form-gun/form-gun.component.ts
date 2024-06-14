@@ -54,6 +54,9 @@ export class FormGunComponent implements OnInit{
     }else{
       this.crudService.updateGun(this.gun).subscribe(() => this.router.navigate(['/gun', this.gun.id]));
     }
-      
+  }
+
+  goToGunsList(){
+    this.router.navigate(['/guns']);
   }
 }

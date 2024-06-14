@@ -39,6 +39,10 @@ export class FormCompanyComponent implements OnInit{
     }else{
       this.crudService.updateCompany(this.company).subscribe(() => this.router.navigate(['/company', this.company.id]));
     }
-      
   }
+  
+    goToCompaniesList(){
+      this.router.navigate(['/companies']);
+    }
+      
 }

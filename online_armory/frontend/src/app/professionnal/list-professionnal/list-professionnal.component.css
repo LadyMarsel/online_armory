@@ -1,3 +1,7 @@
+.title{
+    text-align: center;
+}
+
 .professionnal_card {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -14,11 +18,17 @@
     padding: 20px;
 }
 
-
 .fiche {
-display: flex;
-height: 150px;
-background-color: #FFBD59;
-border-radius: 25px;
+    display: flex;
+    height: 150px;
+    background-color: #FFBD59;
+    border-radius: 25px;
+}
 
+.fiche_buttons{
+    display: flex;
+}
+  
+.add_button{
+    position: fixed; bottom: 30px; right: 30px;
 }

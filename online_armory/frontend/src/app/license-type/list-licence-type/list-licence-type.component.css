@@ -1,7 +1,13 @@
+.title{
+  text-align: center;
+}
+
 .container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-left:10%;
+    margin-right: 10%;
   }
   
   .item-container {
@@ -33,18 +39,4 @@
     font-size: 24px;
     font-weight: 600;
     color: rgb(131, 80, 14);
-  }
-  
-  .add_button{
-    position: fixed; bottom: 30px; right: 30px;
-  }
-  
-  
-  
-  .navigate_button{
-  font-weight: 900;
-  padding : 10px;
-  font-size: 56px;
-  align-self: center;
-  color:rgb(107, 106, 106);
   }

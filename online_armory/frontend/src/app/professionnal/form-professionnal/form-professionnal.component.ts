@@ -36,6 +36,14 @@ export class FormProfessionnalComponent implements OnInit{
   }
 
   onSubmit(){
-    this.crudService.updateProfessionnal(this.professionnal).subscribe(() => this.router.navigate(['/professionnals'])); 
+    if(this.isAddForm){
+      this.crudService.addProfessionnal(this.professionnal).subscribe(() => this.router.navigate(['/professionnals'])); 
+    }else{
+      this.crudService.updateProfessionnal(this.professionnal).subscribe(() => this.router.navigate(['/professionnals'])); 
+    }
+  }
+
+  goToProfessionnalsList(){
+    this.router.navigate(['/professionnals']);
   }
 }

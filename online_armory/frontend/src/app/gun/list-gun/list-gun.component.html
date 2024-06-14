@@ -4,7 +4,7 @@
     <i class="fa-solid fa-circle-chevron-left navigate_button" (click)="goToLeft()"></i>
 
     <!-- Bulle 1 -->
-    <div *ngIf="gunsList[startIndex]" class="item-container" (click)="goToGun(gunsList[startIndex])">
+    <div class="item-container" (click)="goToGun(gunsList[startIndex])">
         <div class="round-frame">
             <img class="item-image" [src]="" />
         </div>
@@ -12,7 +12,7 @@
     </div>
 
     <!-- Bulle 2 -->
-    <div *ngIf="gunsList[startIndex+1]" class="item-container" (click)="goToGun(gunsList[startIndex+1])">
+    <div class="item-container" (click)="goToGun(gunsList[startIndex+1])">
         <div class="round-frame">
             <img class="item-image" [src]="" />
         </div>
@@ -20,7 +20,7 @@
     </div>
 
     <!-- Bulle 3 -->
-    <div *ngIf="gunsList[startIndex+2]" class="item-container" (click)="goToGun(gunsList[startIndex+2])">
+    <div class="item-container" (click)="goToGun(gunsList[startIndex+2])">
         <div class="round-frame">
             <img class="item-image" [src]="" />
         </div>

@@ -22,15 +22,20 @@ export class ListProfessionnalComponent {
   ){}
 
   ngOnInit(){
-    this.crudService.getProfessionnalsList().subscribe(data => {this.professionnalsList = data;console.log(JSON.stringify(data))});
-    }
+    this.loadProfessionnals();
+  }
+
+  loadProfessionnals(){
+    this.crudService.getProfessionnalsList().subscribe(data => this.professionnalsList = data);
+  }
+    
 
   goToAddProfessionnal() {
     this.router.navigate(['/professionnal/add']);
   }
 
   deleteProfessionnal(professionnal: Professionnal) {
-    this.crudService.deleteProfessionnalById(professionnal.id).subscribe(() => this.goToProfessionnalsList());
+    this.crudService.deleteProfessionnalById(professionnal.id).subscribe(() => this.loadProfessionnals());
   }
 
   goToProfessionnalsList(){
