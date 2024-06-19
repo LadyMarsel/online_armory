@@ -30,8 +30,18 @@ export class FormAmmunitionComponent {
   ){}
 
   ngOnInit(): void {
-    this.crudService.getCompaniesList().subscribe(data => this.companies = data);
-    this.crudService.getCalibersList().subscribe(data => this.calibers = data);
+    this.crudService.getCompaniesList().subscribe(data => {
+      this.companies = data;
+      for(let company of this.companies)
+        if (company.id==this.ammunition.company.id)
+          this.ammunition.company = company;
+      });
+    this.crudService.getCalibersList().subscribe(data => {
+      this.calibers = data;
+      for(let caliber of this.calibers)
+        if (caliber.id==this.ammunition.caliber.id)
+          this.ammunition.caliber = caliber;
+      });
     this.isAddForm = this.router.url.includes('add');
   }
 

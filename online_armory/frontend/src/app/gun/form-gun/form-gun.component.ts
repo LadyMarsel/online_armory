@@ -30,7 +30,6 @@ export class FormGunComponent implements OnInit{
   calibers: Caliber[] = [];
   rearmingModes: RearmingMode[] = [];
   internalMechanics: InternalMechanic[] = [];
-  countries: Country[] = [];
 
   constructor(
     private crudService: CrudService, 
@@ -38,12 +37,41 @@ export class FormGunComponent implements OnInit{
   ){}
 
   ngOnInit() {
-    this.crudService.getCompaniesList().subscribe(data => this.companies = data);
-    this.crudService.getGunTypesList().subscribe(data => this.gunTypes = data);
-    this.crudService.getCalibersList().subscribe(data => this.calibers = data);
-    this.crudService.getRearmingModesList().subscribe(data => this.rearmingModes = data);
-    this.crudService.getInternalMechanicsList().subscribe(data => this.internalMechanics = data);
-    this.crudService.getCountriesList().subscribe(data => this.countries = data);
+    this.crudService.getCompaniesList().subscribe(data => {
+      this.companies = data
+      for(let company of this.companies)
+        if (company.id==this.gun.company.id)
+          this.gun.company = company;
+      }
+    );
+    this.crudService.getGunTypesList().subscribe(data => {
+      this.gunTypes = data;
+      for(let gunType of this.gunTypes)
+        if (gunType.id==this.gun.gunType.id)
+          this.gun.gunType = gunType;
+      }
+    );
+    this.crudService.getCalibersList().subscribe(data => {
+      this.calibers = data;
+      for(let caliber of this.calibers)
+        if (caliber.id==this.gun.caliber.id)
+          this.gun.caliber = caliber;
+      }
+    );
+    this.crudService.getRearmingModesList().subscribe(data => {
+      this.rearmingModes = data;
+      for(let rearmingMode of this.rearmingModes)
+        if (rearmingMode.id==this.gun.rearmingMode.id)
+          this.gun.rearmingMode = rearmingMode;
+      }
+    );
+    this.crudService.getInternalMechanicsList().subscribe(data => {
+      this.internalMechanics = data;
+      for(let internalMechanic of this.internalMechanics)
+        if (internalMechanic.id==this.gun.internalMechanic.id)
+          this.gun.internalMechanic = internalMechanic;
+      }
+    );
     this.isAddForm = this.router.url.includes('add');
   }
 

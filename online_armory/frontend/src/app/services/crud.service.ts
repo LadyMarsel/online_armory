@@ -44,7 +44,7 @@ export class CrudService {
   
   getGunsList(): Observable<Gun[]>{
     return this.http.get<Gun[]>(this.baseUrl+'/guns').pipe(
-      tap((response) => this.log(response)),
+      tap((response) => console.log('Guns List debug>>>'+JSON.stringify(response))),
       catchError((error) => this.handleError(error, []))
     );
   }
@@ -53,7 +53,7 @@ export class CrudService {
 
   getGunById(gunId: number):Observable<Gun|undefined>{
     return this.http.get<Gun>(this.baseUrl+`/gun/${gunId}`).pipe(
-      tap((response) => this.log(response)),
+      tap((response) => console.log('Gun by ID debug>>>'+JSON.stringify(response))),
       catchError((error) => this.handleError(error, undefined))
     );
   }
@@ -62,7 +62,7 @@ export class CrudService {
 
   addGun(gun: Gun): Observable<Gun> {
     return this.http.post<Gun>(this.baseUrl+'/gun', gun, this.httpOptions).pipe(
-      tap((response) => this.log(response)),
+      tap((response) => console.log('Add Gun debug>>>'+JSON.stringify(response))),
       catchError((error) => this.handleError(error, null))
     );
   }
@@ -71,7 +71,7 @@ export class CrudService {
 
   updateGun(gun: Gun): Observable<Gun|undefined> {
     return this.http.put(this.baseUrl+'/gun/' + gun.id, gun, this.httpOptions).pipe(
-      tap((response) => this.log(response)),
+      tap((response) => console.log('Update Gun debug>>>'+JSON.stringify(response))),
       catchError((error) => this.handleError(error, null))
     );
   }
@@ -80,7 +80,7 @@ export class CrudService {
 
   deleteGunById(gunId: number): Observable<null> {
     return this.http.delete(this.baseUrl+'/gun/'+ gunId).pipe(
-      tap((response) => this.log(response)),
+      tap((response) => console.log('Delete Gun debug>>>'+JSON.stringify(response))),
       catchError((error) => this.handleError(error, undefined))
     );
   }
@@ -93,7 +93,7 @@ export class CrudService {
   
 getAmmunitionsList(): Observable<Ammunition[]>{
   return this.http.get<Ammunition[]>(this.baseUrl+'/ammunitions').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Ammunitions List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -102,7 +102,7 @@ getAmmunitionsList(): Observable<Ammunition[]>{
 
 getAmmunitionById(ammunitionId: number):Observable<Ammunition|undefined>{
   return this.http.get<Ammunition>(this.baseUrl+`/ammunition/${ammunitionId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Ammunition by ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -111,7 +111,7 @@ getAmmunitionById(ammunitionId: number):Observable<Ammunition|undefined>{
 
 addAmmunition(ammunition: Ammunition): Observable<Ammunition> {
   return this.http.post<Ammunition>(this.baseUrl+'/ammunition', ammunition, this.httpOptions).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Add Ammunnition debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, null))
   );
 }
@@ -120,7 +120,7 @@ addAmmunition(ammunition: Ammunition): Observable<Ammunition> {
 
 updateAmmunition(ammunition: Ammunition): Observable<Ammunition|undefined> {
   return this.http.put(this.baseUrl+'/ammunition/' + ammunition.id, ammunition, this.httpOptions).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Update Ammunition debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, null))
   );
 }
@@ -129,7 +129,7 @@ updateAmmunition(ammunition: Ammunition): Observable<Ammunition|undefined> {
 
 deleteAmmunitionById(ammunitionId: number): Observable<null> {
   return this.http.delete(this.baseUrl+'/ammunition/' + ammunitionId).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Delete Ammunition debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -142,7 +142,7 @@ deleteAmmunitionById(ammunitionId: number): Observable<null> {
   
 getCompaniesList(): Observable<Company[]>{
   return this.http.get<Company[]>(this.baseUrl+'/companies').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Companies List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -151,7 +151,7 @@ getCompaniesList(): Observable<Company[]>{
 
 getCompanyById(companyId: number):Observable<Company|undefined>{
   return this.http.get<Company>(this.baseUrl+`/company/${companyId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Company By ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -160,7 +160,7 @@ getCompanyById(companyId: number):Observable<Company|undefined>{
 
 addCompany(company: Company): Observable<Company> {
   return this.http.post<Company>(this.baseUrl+'/company', company, this.httpOptions).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Add Company debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, null))
   );
 }
@@ -169,7 +169,7 @@ addCompany(company: Company): Observable<Company> {
 
 updateCompany(company: Company): Observable<Company> {
   return this.http.put(this.baseUrl+'/company/' + company.id, company, this.httpOptions).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Update Company debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, null))
   );
 }
@@ -178,7 +178,7 @@ updateCompany(company: Company): Observable<Company> {
 
 deleteCompanyById(companyId: number): Observable<null> {
   return this.http.delete(this.baseUrl+'/company/' + companyId).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Delete Company debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -193,7 +193,7 @@ deleteCompanyById(companyId: number): Observable<null> {
   
 getLicensesList(): Observable<License[]>{
   return this.http.get<License[]>(this.baseUrl+'/licenses').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Licences List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -202,7 +202,7 @@ getLicensesList(): Observable<License[]>{
 
 getLicenseById(licenseId: number):Observable<License|undefined>{
   return this.http.get<License>(this.baseUrl+`/license/${licenseId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Licence By ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -211,7 +211,7 @@ getLicenseById(licenseId: number):Observable<License|undefined>{
 
 addLicense(license: License): Observable<License> {
   return this.http.post<License>(this.baseUrl+'/license', license, this.httpOptions).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Add Licence debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, null))
   );
 }
@@ -220,7 +220,7 @@ addLicense(license: License): Observable<License> {
 
 updateLicense(license: License): Observable<License|undefined> {
   return this.http.put(this.baseUrl+'/license/' + license.id, license, this.httpOptions).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Update Licence debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, null))
   );
 }
@@ -229,7 +229,7 @@ updateLicense(license: License): Observable<License|undefined> {
 
 deleteLicenseById(licenseId: number): Observable<null> {
   return this.http.delete(this.baseUrl+'/license/' + licenseId).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Delete Licence debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -242,7 +242,7 @@ deleteLicenseById(licenseId: number): Observable<null> {
   
 getProfessionnalsList(): Observable<Professionnal[]>{
   return this.http.get<Professionnal[]>(this.baseUrl+'/professionnals').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Professionnals List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -251,7 +251,7 @@ getProfessionnalsList(): Observable<Professionnal[]>{
 
 getProfessionnalById(professionnalId: number):Observable<Professionnal|undefined>{
   return this.http.get<Professionnal>(this.baseUrl+`/professionnal/${professionnalId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Professionnal By ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -260,7 +260,7 @@ getProfessionnalById(professionnalId: number):Observable<Professionnal|undefined
 
 addProfessionnal(professionnal: Professionnal): Observable<Professionnal> {
   return this.http.post<Professionnal>(this.baseUrl+'/professionnal', professionnal, this.httpOptions).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Add Professionnal debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, null))
   );
 }
@@ -269,7 +269,7 @@ addProfessionnal(professionnal: Professionnal): Observable<Professionnal> {
 
 updateProfessionnal(professionnal: Professionnal): Observable<Professionnal|undefined> {
   return this.http.put(this.baseUrl+'/professionnal/' + professionnal.id, professionnal, this.httpOptions).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Update Professionnal debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, null))
   );
 }
@@ -278,7 +278,7 @@ updateProfessionnal(professionnal: Professionnal): Observable<Professionnal|unde
 
 deleteProfessionnalById(professionnalId: number): Observable<null> {
   return this.http.delete(this.baseUrl+'/professionnal/' + professionnalId).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Delete Professionnal debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -291,7 +291,7 @@ deleteProfessionnalById(professionnalId: number): Observable<null> {
   
 getCalibersList(): Observable<Caliber[]>{
   return this.http.get<Caliber[]>(this.baseUrl+'/calibers').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Calibers List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -300,7 +300,7 @@ getCalibersList(): Observable<Caliber[]>{
 
 getCaliberById(caliberId: number):Observable<Caliber|undefined>{
   return this.http.get<Caliber>(this.baseUrl+`/caliber/${caliberId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Caliber By ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -309,7 +309,7 @@ getCaliberById(caliberId: number):Observable<Caliber|undefined>{
 
 addCaliber(caliber: Caliber): Observable<Caliber> {
   return this.http.post<Caliber>(this.baseUrl+'/caliber', caliber, this.httpOptions).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Add Caliber debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, null))
   );
 }
@@ -318,7 +318,7 @@ addCaliber(caliber: Caliber): Observable<Caliber> {
 
 updateCaliber(caliber: Caliber): Observable<Caliber|undefined> {
   return this.http.put(this.baseUrl+'/caliber/' + caliber.id, caliber, this.httpOptions).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Update Caliber debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, null))
   );
 }
@@ -327,7 +327,7 @@ updateCaliber(caliber: Caliber): Observable<Caliber|undefined> {
 
 deleteCaliberById(caliberId: number): Observable<null> {
   return this.http.delete(this.baseUrl+'/caliber/' + caliberId).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Delete Caliber debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -340,7 +340,7 @@ deleteCaliberById(caliberId: number): Observable<null> {
   
 getCountriesList(): Observable<Country[]>{
   return this.http.get<Country[]>(this.baseUrl+'/countries').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Countries List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -349,7 +349,7 @@ getCountriesList(): Observable<Country[]>{
 
 getCountryById(countryId: number):Observable<Country|undefined>{
   return this.http.get<Country>(this.baseUrl+`/country/${countryId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('Country By ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -362,7 +362,7 @@ getCountryById(countryId: number):Observable<Country|undefined>{
   
 getRearmingModesList(): Observable<RearmingMode[]>{
   return this.http.get<RearmingMode[]>(this.baseUrl+'/rearmingModes').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('RearmingModes List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -371,7 +371,7 @@ getRearmingModesList(): Observable<RearmingMode[]>{
 
 getRearmingModeById(rearmingModeId: number):Observable<RearmingMode|undefined>{
   return this.http.get<RearmingMode>(this.baseUrl+`/rearmingMode/${rearmingModeId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('RearmmingMode By ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -384,7 +384,7 @@ getRearmingModeById(rearmingModeId: number):Observable<RearmingMode|undefined>{
   
 getInternalMechanicsList(): Observable<InternalMechanic[]>{
   return this.http.get<InternalMechanic[]>(this.baseUrl+'/internalMechanics').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('InternalMechanics List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -393,7 +393,7 @@ getInternalMechanicsList(): Observable<InternalMechanic[]>{
 
 getInternalMechanicById(internalMechanicId: number):Observable<InternalMechanic|undefined>{
   return this.http.get<InternalMechanic>(this.baseUrl+`/internalMechanic/${internalMechanicId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('InternalMechanic By ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -406,7 +406,7 @@ getInternalMechanicById(internalMechanicId: number):Observable<InternalMechanic|
   
 getGunTypesList(): Observable<GunType[]>{
   return this.http.get<GunType[]>(this.baseUrl+'/gunTypes').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('GunTypes List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -415,7 +415,7 @@ getGunTypesList(): Observable<GunType[]>{
 
 getGunTypeById(gunTypeId: number):Observable<GunType|undefined>{
   return this.http.get<GunType>(this.baseUrl+`/gunType/${gunTypeId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('GunType By ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -428,7 +428,7 @@ getGunTypeById(gunTypeId: number):Observable<GunType|undefined>{
   
 getProfessionnalTypesList(): Observable<ProfessionnalType[]>{
   return this.http.get<ProfessionnalType[]>(this.baseUrl+'/professionnalTypes').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('ProfessionnalTypes List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -437,7 +437,7 @@ getProfessionnalTypesList(): Observable<ProfessionnalType[]>{
 
 getProfessionnalTypeById(professionnalTypeId: number):Observable<ProfessionnalType|undefined>{
   return this.http.get<ProfessionnalType>(this.baseUrl+`/professionnalType/${professionnalTypeId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('ProfessionnalType By ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }
@@ -450,7 +450,7 @@ getProfessionnalTypeById(professionnalTypeId: number):Observable<ProfessionnalTy
   
 getLicenseTypesList(): Observable<LicenseType[]>{
   return this.http.get<LicenseType[]>(this.baseUrl+'/licenseTypes').pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('LicenceTypes List debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, []))
   );
 }
@@ -459,7 +459,7 @@ getLicenseTypesList(): Observable<LicenseType[]>{
 
 getLicenseTypeById(licenseTypeId: number):Observable<LicenseType|undefined>{
   return this.http.get<LicenseType>(this.baseUrl+`/licenseType/${licenseTypeId}`).pipe(
-    tap((response) => this.log(response)),
+    tap((response) => console.log('LicenceType By ID debug>>>'+JSON.stringify(response))),
     catchError((error) => this.handleError(error, undefined))
   );
 }

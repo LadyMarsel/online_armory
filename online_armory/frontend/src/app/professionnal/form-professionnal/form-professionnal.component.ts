@@ -30,8 +30,20 @@ export class FormProfessionnalComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    this.crudService.getProfessionnalTypesList().subscribe(data => this.professionnalTypes = data);
-    this.crudService.getCountriesList().subscribe(data => this.countries = data);
+    this.crudService.getProfessionnalTypesList().subscribe(data => {
+      this.professionnalTypes = data;
+      for(let professionnalType of this.professionnalTypes)
+        if (professionnalType.id==this.professionnal.professionnalType.id)
+          this.professionnal.professionnalType = professionnalType;
+      }
+    );
+    this.crudService.getCountriesList().subscribe(data => {
+      this.countries = data;
+      for(let country of this.countries)
+        if (country.id==this.professionnal.country.id)
+          this.professionnal.country = country;
+      }
+    );
     this.isAddForm = this.router.url.includes('add');
   }
 
